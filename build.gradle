@@ -1,0 +1,49 @@
+plugins {
+  id 'checkstyle'
+  id 'findbugs'
+  id 'java'
+  id 'idea'
+}
+
+version '0.0.1'
+
+checkstyle {
+    toolVersion '8.8'
+    configFile file("config/google_checks.xml")
+}
+
+checkstyleMain {
+    source ='src/main/java'
+}
+
+checkstyleTest {
+    source ='src/test/java'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+findbugs {
+    ignoreFailures = true
+    toolVersion = "3.0.1"
+}
+
+repositories {
+    jcenter() //This prevents issues with transitive dependencies
+    mavenCentral()
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
