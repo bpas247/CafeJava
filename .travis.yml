@@ -3,7 +3,6 @@ jdk:
   - oraclejdk8
 os:
   - linux
-  - osx
 notifications:
   email:
     on_success: never
