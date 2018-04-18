@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
--   [Gradle 4.6](https://gradle.org/install/)
+-   **Optional if using wrapper** [Gradle 4.6](https://gradle.org/install/)
 -   [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 -   **Optional** [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 -   **Optional** [CheckStyle-IDEA](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
@@ -30,7 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-**Note** Depending on your system, it might be necessary to use `./gradlew` or `./gradlew.bat` instead of `gradle`. 
+**Note** Depending on your system, it might be necessary to use `./gradlew` or `./gradlew.bat` instead of `gradle`.
 After cloning and forking the repository, run the following command in the command line (or terminal) within the local directory:
 
     gradle build
