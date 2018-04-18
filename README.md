@@ -1,6 +1,6 @@
-# Deer Simulator
+# Cafe Java
 
-> A simple Java-based, 2D grid-based forestry simulator.
+> A java-based automated CLI inventory manager for cafe shops.
 
 # Table of Contents
 
