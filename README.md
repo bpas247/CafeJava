@@ -43,6 +43,12 @@ To execute the program:
 
     gradle run
 
+To generate reports (PMD, FindBugs, CheckStyle):
+
+    gradle check
+
+**Note** generated reports can be found under `build/reports` after running the above command.
+
 To clean the repository of the current build:
 
     gradle clean
