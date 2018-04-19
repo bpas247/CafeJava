@@ -81,8 +81,8 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 
 -   [Gradle](https://gradle.org/) - Build automation tool
 -   [Travis CI](https://travis-ci.org/) - Continuous integration
--   [CheckStyle](http://checkstyle.sourceforge.net/) - Enforces proper coding style conventions
--   [FindBugs](http://findbugs.sourceforge.net/) - Additional debugging information
+-   [CheckStyle](http://checkstyle.sourceforge.net/) - Enforces Proper Coding Style Conventions
+-   [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool
 -   [JUnit](https://junit.org/junit4/) - Test automation tool
 -   [PMD](https://pmd.github.io/) - Static Analysis Tool
 
