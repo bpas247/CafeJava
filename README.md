@@ -43,8 +43,6 @@ To execute the program:
 
     gradle run
 
-**Note** generated reports can be found under `build/reports` after running the above command.
-
 To clean the repository of the current build:
 
     gradle clean
@@ -73,7 +71,7 @@ We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate re
 
     gradle check
 
-Generated code reports can be found under `..\build\reports\`
+**Note** generated reports can be found under `build/reports` after running the above command.
 
 ## Deployment
 
