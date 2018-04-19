@@ -30,6 +30,10 @@ findbugs {
     toolVersion = "3.0.1"
 }
 
+pmd {
+    ignoreFailures = true
+}
+
 repositories {
     jcenter() //This prevents issues with transitive dependencies
     mavenCentral()
