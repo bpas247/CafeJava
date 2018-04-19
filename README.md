@@ -45,8 +45,6 @@ To execute the program:
 
 To generate reports (PMD, FindBugs, CheckStyle):
 
-    gradle check
-
 **Note** generated reports can be found under `build/reports` after running the above command.
 
 To clean the repository of the current build:
@@ -71,9 +69,9 @@ We use JUnit to automate our testing. To run all unit tests, run in the command 
 
     gradle test
 
-### Running Coding Style Tests
+### Generating Reports
 
-We use checkstyle in order to keep a consistent code format. We also use FindBugs for additional debugging. In order to generate chekstyle and FindBugs reports for the current build, run:
+We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate reports. To generate reports, run the following command:
 
     gradle check
 
