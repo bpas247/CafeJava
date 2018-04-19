@@ -25,12 +25,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
--   **Optional if using wrapper** [Gradle 4.6](https://gradle.org/install/)
--   [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+-   [Java JDK (8 or higher)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+-   **Optional if using wrapper** [Gradle (4.6 or higher)](https://gradle.org/install/)
 -   **Optional** [IntelliJ IDEA](https://www.jetbrains.com/idea/)
--   **Optional** [CheckStyle-IDEA](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
--   **Optional** [FindBugs-IDEA](https://plugins.jetbrains.com/plugin/3847-findbugs-idea)
--   **Optional** [PMD IntelliJ IDEA Plugin](https://pmd.github.io/latest/pmd_userdocs_tools.html#idea)
+-   **Optional** [CheckStyle Plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
+-   **Optional** [FindBugs Plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/3847-findbugs-idea)
+-   **Optional** [PMD Plugin for IntelliJ IDEA Plugin](https://pmd.github.io/latest/pmd_userdocs_tools.html#idea)
 
 ### Installing
 
