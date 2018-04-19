@@ -1,3 +1,6 @@
+master - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=master)](https://travis-ci.org/bpas247/CafeJava),
+develop - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=develop)](https://travis-ci.org/bpas247/CafeJava)
+
 # Cafe Java
 
 > A java-based automated CLI inventory manager for cafe shops.
