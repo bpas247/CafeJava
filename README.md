@@ -30,6 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 -   **Optional** [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 -   **Optional** [CheckStyle-IDEA](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
 -   **Optional** [FindBugs-IDEA](https://plugins.jetbrains.com/plugin/3847-findbugs-idea)
+-   **Optional** [PMD IntelliJ IDEA Plugin](https://pmd.github.io/latest/pmd_userdocs_tools.html#idea)
 
 ### Installing
 
@@ -83,6 +84,7 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 -   [CheckStyle](http://checkstyle.sourceforge.net/) - Enforces proper coding style conventions
 -   [FindBugs](http://findbugs.sourceforge.net/) - Additional debugging information
 -   [JUnit](https://junit.org/junit4/) - Test automation tool
+-   [PMD](https://pmd.github.io/) - Static Analysis Tool
 
 ## Contributing
 
