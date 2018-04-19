@@ -10,6 +10,7 @@ develop - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=dev
 -   [Getting Started](#getting-started)
     -   [Prerequisites](#prerequisites)
     -   [Installing](#installing)
+    -   [Additional Gradle Commands](#additional-gradle-commands)
 -   [Running Tests](#running-tests)
     -   [Running Coding Style Tests](#running-coding-style-tests)
 -   [Deployment](#deployment)
@@ -38,6 +39,8 @@ These instructions will get you a copy of the project up and running on your loc
 After cloning and forking the repository, run the following command in the command line (or terminal) within the local directory:
 
     gradle build
+
+### Additional Gradle Commands
 
 To execute the program:
 
