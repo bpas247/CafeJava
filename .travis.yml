@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - oraclejdk8
+os:
+  - linux
+notifications:
+  email:
+    on_success: never
+    on_failure: change
