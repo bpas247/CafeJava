@@ -1,0 +1,2 @@
+# MS Project files should be diffed as binary
+*.mpp	 diff=binary
