@@ -1,2 +1,2 @@
-# MS Project files should be diffed as binary
-*.mpp	 diff=binary
+# MS Project file should be diffed as binary
+WBS.xml		diff=binary
