@@ -2,7 +2,7 @@
 
 > Project Definition Document
 >
-> Document Version: 1.2
+> Document Version: 1.3
 
 ## Authors
 
@@ -17,6 +17,7 @@
 | 4/20/18 | 1.0       | Initial draft          | Brady Pascoe, Justin Cheriyan |
 | 4/22/18 | 1.1       | Reformatted draft      | Brady Pascoe                  |
 | 4/25/18 | 1.2       | Meeting revision draft | All                           |
+| 4/25/18 | 1.3       | Post-meeting revisions | Brady Pascoe                  |
 
 ## Table of Contents
 
@@ -28,7 +29,7 @@ This Project Definition Document provides a brief overview of CafeJava to promot
 
 ## Problem/Opportunity
 
-Problem: Cafe stores have to manually take inventory which wastes time and effort.
+Problem: Café stores have to manually take inventory which wastes time and effort.
 Opportunity: Build an automated inventory to keep track of all products, stocks, and transaction history.
 
 ## Project Goal
@@ -37,11 +38,10 @@ Applying theory-based project management skills to a real world software applica
 
 ## Project Objectives
 
--   Make it easier to keep track of inventory
--   Provide a centralized place for transaction histories
--   Create fast and reliable software
--   Learn project management skills through application
--   Develop high-quality software
+-   Make it easier to keep track of inventory.
+-   Provide a centralized place for transaction histories.
+-   Learn project management skills through application.
+-   Develop high-quality software.
 
 ## Project Scope
 
@@ -52,7 +52,7 @@ Current scope includes:
 -   Keep track of transactions (order list, customer information, etc).
 -   Implement using command line interface.
 -   Provide unit, component, and system testing.
--   Document using javadocs.
+-   Document using Javadoc.
 
 Additional (if time permits) scope includes:
 
@@ -62,9 +62,11 @@ Additional (if time permits) scope includes:
 
 ## Key Stakeholders
 
--   Management (Retik)
--   Employees
--   Store management
+-   Software Management Executive (Retik)
+-   Software Development Team (Us)
+-   Café Store Employees
+-   Café Store Management
+-   Customers
 
 ## Success Criteria
 
@@ -87,9 +89,9 @@ Additional (if time permits) scope includes:
 
 ## Risks
 
--   Database leak that results in loss of data.
--   Customer interact with the system directly.
--   Transaction history was altered after transaction was finalized.
+-   Database leak results in loss of data.
+-   Customer interacts with the system directly.
+-   Transaction history was altered after finalization.
 
 ## Estimated Duration
 
@@ -98,7 +100,7 @@ Final presentation due: 6/5/18
 
 ## Recommended Project Approach
 
-It will be a java-based, command line interface. Technologies used are:
+It will be a java-based, command line interface application. Technologies used are:
 
 -   Static Analysis Tools: FindBugs, PMD
 -   Coding Style Standard: Google Standard
