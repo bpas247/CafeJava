@@ -2,7 +2,7 @@
 
 > Project Definition Document
 >
-> Document Version: 1.3
+> Document Version: 1.4
 
 ## Authors
 
@@ -12,12 +12,13 @@
 
 ## Version History
 
-| Date    | Version # | Description            | Reviser(s)                    |
-| ------- | --------- | ---------------------- | ----------------------------- |
-| 4/20/18 | 1.0       | Initial draft          | Brady Pascoe, Justin Cheriyan |
-| 4/22/18 | 1.1       | Reformatted draft      | Brady Pascoe                  |
-| 4/25/18 | 1.2       | Meeting revision draft | All                           |
-| 4/25/18 | 1.3       | Post-meeting revisions | Brady Pascoe                  |
+| Date    | Version # | Description                 | Reviser(s)                    |
+| ------- | --------- | --------------------------- | ----------------------------- |
+| 4/20/18 | 1.0       | Initial draft               | Brady Pascoe, Justin Cheriyan |
+| 4/22/18 | 1.1       | Reformatted draft           | Brady Pascoe                  |
+| 4/25/18 | 1.2       | Meeting revision draft      | All                           |
+| 4/25/18 | 1.3       | Post-meeting revisions      | Brady Pascoe                  |
+| 4/28/18 | 1.4       | Added Function Requirements | Brady Pascoe                  |
 
 ## Table of Contents
 
@@ -175,4 +176,4 @@ It will be a java-based, command line interface application. Technologies used a
 -   Test Development: Agile with Test-Driven Development (TDD)
 -   IDE: IntelliJ
 
-> Date: 4/25/18
+> Date: 4/28/18
