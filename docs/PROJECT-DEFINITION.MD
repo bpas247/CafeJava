@@ -60,6 +60,70 @@ Additional (if time permits) scope includes:
 -   Set up a reminder system if ingredients run low
 -   Develop and deploy website for documentation
 
+## Functional Requirements
+
+An employee:
+
+-   Shall be able to display all available frozen food items, sorted by:
+    -   Date added (oldest)
+    -   Date added (newest)
+    -   Name (A to Z)
+    -   Name (Z to a)
+    -   Price (low to high)
+    -   Price (high to low)
+    -   Stock (low to high)
+    -   Stock (high to low)
+    -   Item # (low to high)
+    -   Item # (high to low)
+-   Shall be able to search for a specific frozen food item, and display the top 10 most relevant results. Can search by:
+    -   Name
+    -   Date added
+    -   Item #
+    -   Price
+    -   Stock
+-   Shall be able to search for a single specific frozen food item, and return nothing if it is not in the database. Can search by:
+    -   Name
+    -   Item #
+-   Shall be able to display all available ingredients, sorted by:
+    -   Date added (oldest)
+    -   Date added (newest)
+    -   Name (A to Z)
+    -   Name (Z to a)
+    -   Price (low to high)
+    -   Price (high to low)
+    -   Stock (low to high)
+    -   Stock (high to low)
+    -   Item # (low to high)
+    -   Item # (high to low)
+-   Shall be able to search for specific ingredient items, and display the top 10 most relevant results. Can search by:
+    -   Name
+    -   Date added
+    -   Item #
+    -   Price
+    -   Stock
+-   Shall be able to search for a single specific ingredient, and return nothing if it is not in the database. Can search by:
+    -   Name
+    -   Item #
+-   Shall be able to take a customer's order and register the transaction into the system.
+
+A manager:
+
+-   Shall be able to have all of the same functionality of an employee.
+-   Shall be able to add a new frozen food item.
+-   Shall be able to edit an existing frozen food item.
+-   Shall be able to remove an existing frozen food item.
+-   Shall be able to increase the stock of an existing frozen food item.
+-   Shall be able to decrease the stock of an existing frozen food item.
+-   Shall be able to increase the price of an existing frozen food item.
+-   Shall be able to decrease the price of an existing frozen food item.
+-   Shall be able to add a new ingredient item.
+-   Shall be able to edit an existing ingredient item.
+-   Shall be able to remove an existing ingredient item.
+-   Shall be able to increase the stock of an existing ingredient item.
+-   Shall be able to decrease the stock of an existing ingredient item.
+-   Shall be able to increase the price of an existing ingredient item.
+-   Shall be able to decrease the price of an existing ingredient item.
+
 ## Key Stakeholders
 
 -   Software Management Executive (Retik)
