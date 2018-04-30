@@ -2,7 +2,7 @@
 
 > Project Definition Document
 >
-> Document Version: 1.4
+> Document Version: 1.5
 
 ## Authors
 
@@ -12,13 +12,14 @@
 
 ## Version History
 
-| Date    | Version # | Description                 | Reviser(s)                    |
-| ------- | --------- | --------------------------- | ----------------------------- |
-| 4/20/18 | 1.0       | Initial draft               | Brady Pascoe, Justin Cheriyan |
-| 4/22/18 | 1.1       | Reformatted draft           | Brady Pascoe                  |
-| 4/25/18 | 1.2       | Meeting revision draft      | All                           |
-| 4/25/18 | 1.3       | Post-meeting revisions      | Brady Pascoe                  |
-| 4/28/18 | 1.4       | Added Function Requirements | Brady Pascoe                  |
+| Date    | Version # | Description                     | Reviser(s)                    |
+| ------- | --------- | ------------------------------- | ----------------------------- |
+| 4/20/18 | 1.0       | Initial draft                   | Brady Pascoe, Justin Cheriyan |
+| 4/22/18 | 1.1       | Reformatted draft               | Brady Pascoe                  |
+| 4/25/18 | 1.2       | Meeting revision draft          | All                           |
+| 4/25/18 | 1.3       | Post-meeting revisions          | Brady Pascoe                  |
+| 4/28/18 | 1.4       | Added Function Requirements     | Brady Pascoe                  |
+| 4/29/18 | 1.5       | Added Non-Function Requirements | JD Mauthe                     |
 
 ## Table of Contents
 
@@ -125,6 +126,22 @@ A manager:
 -   Shall be able to increase the price of an existing ingredient item.
 -   Shall be able to decrease the price of an existing ingredient item.
 
+## Non-Functional Requirements
+
+Usability:
+
+-   Users should be able to fully use the application after 2 hours of training.
+-   Errors made by experienced users shall not exceed 3 per hour.
+
+Performance:
+
+-   Interaction between the user and the application should take less than 3 seconds.
+
+Availability:
+
+-   A new installation of the application shall be usable within 6 hours.
+-   The application should be available during hours of operation.
+
 ## Key Stakeholders
 
 -   Software Management Executive (Retik)
@@ -176,4 +193,4 @@ It will be a java-based, command line interface application. Technologies used a
 -   Test Development: Agile with Test-Driven Development (TDD)
 -   IDE: IntelliJ
 
-> Date: 4/28/18
+> Date: 4/29/18
