@@ -23,9 +23,6 @@
 
 ## Table of Contents
 
--   [Authors](#authors)
--   [Version History](#version-history)
--   [Table of Contents](#table-of-contents)
 -   [Purpose](#purpose)
 -   [Problem/Opportunity](#problemopportunity)
 -   [Project Goal](#project-goal)
