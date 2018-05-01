@@ -88,3 +88,6 @@ bin/
 # FindBugs
 findbugs-*.html
 findbugs-*.xml
+
+# Microsoft Project Files
+*.mpp
