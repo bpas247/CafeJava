@@ -45,8 +45,8 @@ This Project Definition Document provides a brief overview of CafeJava to promot
 
 ## Problem/Opportunity
 
-Problem: Café stores have to manually take inventory which wastes time and effort.
-Opportunity: Build an automated inventory to keep track of all products, stocks, and transaction history.
+- Problem: Café stores have to manually take inventory which wastes time and effort.
+- Opportunity: Build an automated inventory to keep track of all products, stocks, and transaction history.
 
 ## Project Goal
 
