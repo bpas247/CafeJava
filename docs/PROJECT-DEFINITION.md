@@ -2,7 +2,7 @@
 
 > Project Definition Document
 >
-> Document Version: 1.5
+> Document Version: 1.6
 
 ## Authors
 
@@ -20,10 +20,24 @@
 | 4/25/18 | 1.3       | Post-meeting revisions          | Brady Pascoe                  |
 | 4/28/18 | 1.4       | Added Function Requirements     | Brady Pascoe                  |
 | 4/29/18 | 1.5       | Added Non-Function Requirements | JD Mauthe                     |
+| 5/01/18 | 1.6       | Added Table of Contents         | Brady Pascoe                  |
 
 ## Table of Contents
 
-TODO: Implement
+-   [Purpose](#purpose)
+-   [Problem/Opportunity](#problemopportunity)
+-   [Project Goal](#project-goal)
+-   [Project Objectives](#project-objectives)
+-   [Project Scope](#project-scope)
+-   [Functional Requirements](#functional-requirements)
+-   [Non-Functional Requirements](#non-functional-requirements)
+-   [Key Stakeholders](#key-stakeholders)
+-   [Success Criteria](#success-criteria)
+-   [Assumptions](#assumptions)
+-   [Constraints](#constraints)
+-   [Risks](#risks)
+-   [Estimated Duration](#estimated-duration)
+-   [Recommended Project Approach](#recommended-project-approach)
 
 ## Purpose
 
@@ -193,4 +207,4 @@ It will be a java-based, command line interface application. Technologies used a
 -   Test Development: Agile with Test-Driven Development (TDD)
 -   IDE: IntelliJ
 
-> Date: 4/29/18
+> Date: 5/01/18
