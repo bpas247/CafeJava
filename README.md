@@ -95,7 +95,9 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 
 ## Contributors
 
--   **Brady Pascoe** - _Initial work_ - [bpas247](https://github.com/bpas247)
+-   **Brady Pascoe** - _Team Manager_ - [bpas247](https://github.com/bpas247)
+-   **Justin Cheriyan** - _Software Developer_ - [justincheriyan](https://github.com/justincheriyan)
+-   **JD Mauthe** - _Software Developer_ - [jdmauthe](https://github.com/jdmauthe)
 
 ## Versioning
 
