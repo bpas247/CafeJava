@@ -91,7 +91,7 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 
 ## Contributing
 
-`TODO` Create CONTRIBUTING.md
+Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Contributors
 
