@@ -2,7 +2,7 @@
 ## Progress Report 0
 - Date: 4/25/18
 - Time: 3:30-5:30PM
-- Location: LB2-304
+- Location: Online (via Discord)
 - Description: Preliminary Meeting
 
 ## Attendees:
