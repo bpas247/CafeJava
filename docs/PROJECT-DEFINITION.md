@@ -158,8 +158,8 @@ Availability:
 
 ## Key Stakeholders
 
--   Software Management Executive (Retik)
--   Software Development Team (Us)
+-   Software Management Executive
+-   Software Development Team
 -   Café Store Employees
 -   Café Store Management
 -   Customers
