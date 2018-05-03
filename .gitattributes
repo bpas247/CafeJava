@@ -1,0 +1,2 @@
+# MS Project file should be diffed as binary
+WBS.xml		diff=binary
