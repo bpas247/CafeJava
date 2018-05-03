@@ -11,9 +11,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Progress report 0
+-   Progress-Report-0.md
+-   Progress-Report-1.md
+-   CHANGELOG.md
+-   CONTRIBUTING.md
+-   PROJECT-DEFINITION.md
+-   WBS.xml
 
 ### Changed
+
+-   README.md to include CONTRIBUTING.md
+-   README.md to include all contributors
+-   .gitignore to start ignore .mpp files
+-   .gitattributes to treat WBS.xml as binary
 
 ### Removed
 
