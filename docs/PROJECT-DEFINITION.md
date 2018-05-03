@@ -2,7 +2,7 @@
 
 > Project Definition Document
 >
-> Document Version: 1.6
+> Document Version: 1.7
 
 ## Authors
 
@@ -21,6 +21,7 @@
 | 4/28/18 | 1.4       | Added Function Requirements     | Brady Pascoe                  |
 | 4/29/18 | 1.5       | Added Non-Function Requirements | JD Mauthe                     |
 | 5/01/18 | 1.6       | Added Table of Contents         | Brady Pascoe                  |
+| 5/02/18 | 1.7       | Final Revisions                 | Brady Pascoe                  |
 
 ## Table of Contents
 
@@ -207,4 +208,4 @@ It will be a java-based, command line interface application. Technologies used a
 -   Test Development: Agile with Test-Driven Development (TDD)
 -   IDE: IntelliJ
 
-> Date: 5/01/18
+> Date: 5/02/18
