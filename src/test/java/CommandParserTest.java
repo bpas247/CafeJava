@@ -127,7 +127,7 @@ public class CommandParserTest {
 
   @Test
   public void validateChange() {
-    runChangeTests(Function.VALIDATE)
+    runChangeTests(Function.VALIDATE);
   }
 
   @Test
