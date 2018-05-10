@@ -27,9 +27,9 @@
 -   Design the "Storage" object - Brady
 -   Design the "User Interface" object - Brady
 -   Design the "Command" abstract object - Brady
-    -   Design the "Search Command" object
-    -   Design the "Remove Command" object
-    -   Design the "Add Command" object
-    -   Design the "Display Command" object
-    -   Design the "Find Command" object
+    -   Design the "Search Command" object - Justin
+    -   Design the "Remove Command" object - Justin
+    -   Design the "Add Command" object - Justin
+    -   Design the "Display Command" object - JD
+    -   Design the "Find Command" object - JD
     -   Design the "Change Command" object - JD
