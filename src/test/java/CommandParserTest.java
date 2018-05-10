@@ -93,17 +93,22 @@ public class CommandParserTest {
   }
 
   private void runChangeTests(Function method) {
-    runTest("Change FF stock 45", method);  // Sets the stock
-    runTest("Change FF stock -37", method); // Decreases stock
-    runTest("Change FF stock +19", method); // Increases stock
+    runTest("Change FF name ice-cream stock 45", method);  // Sets the stock
+    runTest("Change FF name bagel stock -37", method); // Decreases stock
+    runTest("Change FF id 4691 stock +19", method); // Increases stock
 
-    runTest("Change ingredient stock 45", method);  // Sets the stock
-    runTest("Change ingredient stock -37", method); // Decreases stock
-    runTest("Change ingredient stock +19", method); // Increases stock
+    runTest("Change ingredient name rosemary stock 45", method);  // Sets the stock
+    runTest("Change ingredient name ginger stock -37", method); // Decreases stock
+    runTest("Change ingredient id 9654 stock +19", method); // Increases stock
 
-    runTest("Change FF price 45", method);  // Sets the price
-    runTest("Change FF price -37", method); // Decreases price
-    runTest("Change FF price +19", method); // Increases price
+    runTest("Change FF name cheese price 45", method);  // Sets the price
+    runTest("Change FF name ice price -37", method); // Decreases price
+    runTest("Change FF id 1276 price +19", method); // Increases price
+
+    runTest("Change ingredient name ginger price 45", method);  // Sets the price
+    runTest("Change ingredient name olive price -37", method); // Decreases price
+    runTest("Change ingredient id 1196 price +19", method); // Increases price
+  }
 
     runTest("Change ingredient price 45", method);  // Sets the price
     runTest("Change ingredient price -37", method); // Decreases price
