@@ -23,3 +23,13 @@
 -   Discuss "Command Parser" design
 
 ## Tasks Assigned During Meeting:
+
+-   Design the "Storage" object - Brady
+-   Design the "User Interface" object - Brady
+-   Design the "Command" abstract object - Brady
+    -   Design the "Search Command" object
+    -   Design the "Remove Command" object
+    -   Design the "Add Command" object
+    -   Design the "Display Command" object
+    -   Design the "Find Command" object
+    -   Design the "Change Command" object - JD
