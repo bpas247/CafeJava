@@ -31,14 +31,6 @@ public class CommandParserTest {
     }
   }
 
-  private void runParseTest(String toParse) {
-    Assert.assertEquals(ParserStatus.OK, test.parse(toParse));
-  }
-
-  private void runRunCommandTest(String toRun) {
-    Assert.assertEquals(ParserStatus.OK, test.runCommand(toRun));
-  }
-
   private void runDisplayTests(Function method) {
     runTest("Display FF date high", method);
     runTest("Display FF date low", method);
