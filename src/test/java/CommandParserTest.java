@@ -110,6 +110,15 @@ public class CommandParserTest {
     runTest("Change ingredient id 1196 price +19", method); // Increases price
   }
 
+  private void runAddTests(Function method) {
+    runTest("Add FF name ice-cream price 37 stock 15", method);
+    runTest("Add FF name bagel price 47 stock 270", method);
+
+    runTest("Add ingredient name olive price 37 stock 15", method);
+    runTest("Add ingredient name syrup price 47 stock 270", method);
+
+  }
+
   }
 
   @Test
@@ -133,6 +142,11 @@ public class CommandParserTest {
   }
 
   @Test
+  public void validateAdd() {
+    runAddTests(Function.VALIDATE);
+  }
+
+  @Test
   public void parseDisplay() {
     runDisplayTests(Function.PARSE);
   }
@@ -150,6 +164,11 @@ public class CommandParserTest {
   @Test
   public void parseChange() {
     runChangeTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseAdd() {
+    runAddTests(Function.PARSE);
   }
 
   @Test
@@ -171,4 +190,10 @@ public class CommandParserTest {
   public void runRunCommandChangeStock() {
     runChangeTests(Function.RUN);
   }
+
+  @Test
+  public void runRunCommmandAdd() {
+    runAddTests(Function.RUN);
+  }
+
 }
