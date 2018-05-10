@@ -119,6 +119,15 @@ public class CommandParserTest {
 
   }
 
+  private void runRemoveTests(Function method) {
+    runTest("Remove FF name ice-cream", method);
+    runTest("Remove FF name bagel", method);
+    runTest("Remove FF id 1024", method);
+
+    runTest("Remove ingredient name ginger", method);
+    runTest("Remove ingredient name strawberry", method);
+    runTest("Remove ingredient id 1516", method);
+
   }
 
   @Test
@@ -147,6 +156,11 @@ public class CommandParserTest {
   }
 
   @Test
+  public void validateRemove() {
+    runRemoveTests(Function.VALIDATE);
+  }
+
+  @Test
   public void parseDisplay() {
     runDisplayTests(Function.PARSE);
   }
@@ -169,6 +183,11 @@ public class CommandParserTest {
   @Test
   public void parseAdd() {
     runAddTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseRemove() {
+    runRemoveTests(Function.PARSE);
   }
 
   @Test
@@ -196,4 +215,8 @@ public class CommandParserTest {
     runAddTests(Function.RUN);
   }
 
+  @Test
+  public void runRunCommandRemove() {
+    runRemoveTests(Function.RUN);
+  }
 }
