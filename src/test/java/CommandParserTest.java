@@ -110,9 +110,6 @@ public class CommandParserTest {
     runTest("Change ingredient id 1196 price +19", method); // Increases price
   }
 
-    runTest("Change ingredient price 45", method);  // Sets the price
-    runTest("Change ingredient price -37", method); // Decreases price
-    runTest("Change ingredient price +19", method); // Increases price
   }
 
   @Test
