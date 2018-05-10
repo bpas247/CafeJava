@@ -34,7 +34,7 @@
     -   Design the "Add Command" object
     -   Design the "Display Command" object
     -   Design the "Find Command" object
-    -   Design the "Search Command" object
+    -   Design the "Change Command" object
 -   Design the "Item" abstract object
     -   Design the "Frozen Food Item" object
     -   Design the "Ingredient Item" object
