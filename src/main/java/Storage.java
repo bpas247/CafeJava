@@ -1,15 +1,16 @@
-import java.util.HashSet;
 import java.util.List;
+import java.util.HashMap;
 
-public class Storage extends HashSet<ItemMock> {
+public class Storage {
+  private HashMap<Integer, ItemMock> items = new HashMap<>();
 
-    public List<ItemMock> search(ItemMock item) {
-        return null;
-    }
+  public List<ItemMock> search(int itemHash) {
+    return null;
+  }
 
-    public ItemMock find(ItemMock item) {
-	return null;
-    }
+  public ItemMock find(int itemHash) {
+    return null;
+  }
 }
 
 class ItemMock {
