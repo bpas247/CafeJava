@@ -11,6 +11,14 @@ public class Storage {
   public ItemMock find(int itemHash) {
     return null;
   }
+
+  public boolean add(ItemMock itemToAdd) {
+    return false;
+  }
+
+  public boolean remove(ItemMock itemToRemove) {
+    return false;
+  }
 }
 
 class ItemMock {
