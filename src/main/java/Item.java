@@ -1,25 +1,36 @@
 import java.util.Date;
 
 /**
- * Item is an abstract base class.
+ * This class represents a item.
  * @author JD Mauthe
+ * @version 5/13/18
+ * @since 5/8/18
  */
-abstract public class Item {
-    String name;
-    Date dateAdded;
-    int itemNumber;
-    int stock;
-    double price;
+public class Item {
+    private ItemType type;
+    private String name;
+    private Date dateAdded;
+    private int itemNumber;
+    private int stock;
+    private double price;
 
     /**
      * Constructor for Item.
+     * @param type Type of Item.
      * @param name Name of Item.
      * @param itemNumber Number of Item.
      * @param stock Stock of Item.
      * @param price Price of Item.
      */
-    Item(String name, int itemNumber, int stock, double price) {
+    Item(ItemType type, String name, int itemNumber, int stock, double price) {
     }
+
+    /**
+     * This methods takes a attribute and returns the value of the attribute.
+     * @param attribute The attribute.
+     * @return Sting The value of the given attribute.
+     */
+    public String getAttribute(String attribute) { return ""; }
 
     /**
      * Getter for name.
@@ -28,6 +39,12 @@ abstract public class Item {
     public String getName() {
         return "";
     }
+
+    /**
+     * Getter for type.
+     * @return ItemType Returns the type of item.
+     */
+    public ItemType getType() { return null; }
 
     /**
      * Getter for dateAdded.
@@ -47,7 +64,7 @@ abstract public class Item {
 
     /**
      * Getter for stock.
-     * @return int Returns the stock
+     * @return int Returns the stock.
      */
     public int getStock() {
         return 0;
@@ -55,43 +72,29 @@ abstract public class Item {
 
     /**
      * Getter for price.
-     * @return double Returns the price
+     * @return double Returns the price.
      */
     public double getPrice() {
         return 0;
     }
 
     /**
-     * This method is used to increase the stock.
-     * @param amount The amount to increase stock.
+     * This method is used to set the stock.
+     * @param amount The amount to set stock.
      */
-    public void increaseStock(int amount) {
+    public void setStock(int amount) {
     }
 
     /**
-     * This method is used to decrease the amount of stock.
-     * @param amount The amount to decrease stock.
+     * This method is used to set the price.
+     * @param amount The amount to set price.
      */
-    public void decreaseStock(int amount) {
-    }
-
-    /**
-     * This method is used to increase the price.
-     * @param amount The amount to increase price
-     */
-     public void increasePrice(int amount) {
-    }
-
-    /**
-     * This method is used to decrease price.
-     * @param amount The amount to decrease price.
-     */
-    public void decreasePrice(int amount) {
+     public void setPrice(int amount) {
     }
 
     /**
      * Overloaded toString
-     * @return String The information for the item
+     * @return String The information for the item.
      */
     @Override
     public String toString() {
@@ -100,7 +103,7 @@ abstract public class Item {
 
     /**
      * Overloaded hashCode
-     * @return int The hash code
+     * @return int The hash code.
      */
     @Override
     public int hashCode() {
