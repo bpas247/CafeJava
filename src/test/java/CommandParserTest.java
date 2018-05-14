@@ -10,15 +10,9 @@ public class CommandParserTest {
     test = new CommandParser();
   }
 
-  enum Function {
-    VALIDATE,
-    PARSE,
-    RUN
-  }
-
   private void runTest(String toValidate, Function method) {
 
-    switch(method) {
+    switch (method) {
       case VALIDATE:
         Assert.assertEquals(ParserStatus.OK, test.validate(toValidate));
         break;
@@ -218,5 +212,11 @@ public class CommandParserTest {
   @Test
   public void runRunCommandRemove() {
     runRemoveTests(Function.RUN);
+  }
+
+  enum Function {
+    VALIDATE,
+    PARSE,
+    RUN
   }
 }
