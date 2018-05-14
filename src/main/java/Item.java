@@ -18,11 +18,10 @@ public class Item {
      * Constructor for Item.
      * @param type Type of Item.
      * @param name Name of Item.
-     * @param itemNumber Number of Item.
      * @param stock Stock of Item.
      * @param price Price of Item.
      */
-    Item(ItemType type, String name, int itemNumber, int stock, double price) {
+    public Item(ItemType type, String name, int stock, double price) {
     }
 
     /**
