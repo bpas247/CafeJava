@@ -4,9 +4,9 @@ import java.util.List;
  * This class parses a given String to manipulate the Storage object in some way.
  * It also checks for valid and invalid Commands within the given String.
  *
- * @author  Brady Pascoe
+ * @author Brady Pascoe
  * @version 5/08/18
- * @since   5/07/18
+ * @since 5/07/18
  */
 public class CommandParser {
   private List<Command> validCommands;
