@@ -9,7 +9,7 @@ import java.util.List;
  * @since   5/07/18
  */
 public class CommandParser {
-  private List<CommandMock> validCommands;
+  private List<Command> validCommands;
 
   public CommandParser() {
     //Commands should be inserted into the list here
@@ -31,7 +31,7 @@ public class CommandParser {
    * @param toParse The given String to parse.
    * @return The Command object that was parsed. Null if it is invalid.
    */
-  public CommandMock parse(String toParse) {
+  public Command parse(String toParse) {
     return null;
   }
 
@@ -46,6 +46,3 @@ public class CommandParser {
     return ParserStatus.UNHANDLED_ERROR;
   }
 }
-
-//Mock object to get this class compiling
-class CommandMock {}
