@@ -13,9 +13,5 @@ public abstract class Command {
 
   public abstract CommandStatus parse(String toParse);
 
-  public abstract CommandStatus run(String toParse, StorageMock storage);
-}
-
-class StorageMock { //For compilation
-
+  public abstract CommandStatus run(String toParse, Storage storage);
 }
