@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /**
  * This class parses the given string to search items in the storage object.
  *
@@ -50,7 +52,7 @@ public class CommandSearch extends Command {
    * @param toParse The given String to parse.
    * @return The status of whether or not it was successfully ran or not
    */
-  public CommandStatus runCommand(String toParse) {
+  public CommandStatus run(String toParse, Storage storage) {
     return null;
   }
 }
