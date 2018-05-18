@@ -17,7 +17,7 @@ public class CommandAdd extends Command {
    * Constructor for CommandAdd
    * @param n Name of Command
    */
-   public CommandFind(String n) {
+   public CommandAdd(String n) {
       super(n);
    }
    
@@ -48,7 +48,7 @@ public class CommandAdd extends Command {
    * @param toParse The given String to parse.
    * @return The status of whether or not it was successfully ran or not
    */
-  public CommandStatus runCommand(String toParse) {
+  public CommandStatus run(String toParse, Storage storage) {
     return null;
   }
 }
