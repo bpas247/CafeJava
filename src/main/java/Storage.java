@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Storage {
   private HashMap<Integer, Item> items = new HashMap<>();
-  private CommandParser parser = new CommandParser();
 
   /**
    * Searches for a specific hashcode and returns
