@@ -1,4 +1,3 @@
-public enum ItemType {
 /**
  * Values that can be used for the type of item.
  */
