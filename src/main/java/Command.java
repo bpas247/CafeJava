@@ -41,7 +41,7 @@ public abstract class Command {
    * @return The status on if it's parsable
    */
   public abstract CommandStatus parse(String toParse);
-  
+
   /**
    * Runs this Command on the given object based on the given String.
    * It should validate and parse the String before performing its
