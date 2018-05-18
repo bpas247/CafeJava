@@ -13,7 +13,7 @@ public abstract class Command {
 
   public abstract CommandStatus parse(String toParse);
 
-  public abstract CommandStatus run(String toParse, StorageMock storage);
+  public abstract CommandStatus run(String toParse, Storage storage);
 }
 
 class StorageMock { //For compilation
