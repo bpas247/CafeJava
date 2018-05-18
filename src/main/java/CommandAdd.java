@@ -5,17 +5,6 @@
  * @version 5/18/18
  * @since 5/18/18
  */
- 
-/* 
-private void runAddTests(Function method) {
-   runTest("Add FF name ice-cream price 37 stock 15", method);
-   runTest("Add FF name bagel price 47 stock 270", method);
-
-   runTest("Add ingredient name olive price 37 stock 15", method);
-   runTest("Add ingredient name syrup price 47 stock 270", method);
-
-}
-*/
 
 public class CommandAdd extends Command {
    private ItemType type;
