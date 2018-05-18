@@ -9,8 +9,8 @@
 public class CommandAdd extends Command {
    private ItemType type;
    private String name;
-   private int price
-   private int stock
+   private int price;
+   private int stock;
    
   /**
    * 
