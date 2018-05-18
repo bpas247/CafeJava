@@ -21,7 +21,7 @@ public class CommandSearch extends Command {
    * Constructor for CommandAdd
    * @param n Name of Command
    */
-   public CommandFind(String n) {
+   public CommandSearch(String n) {
       super(n);
    }
    
