@@ -47,7 +47,7 @@ public class CommandChange extends Command {
      * @return The status of whether or not it was successfully run.
      */
     @Override
-    public CommandStatus run(String toParse, StorageMock storage) {
+    public CommandStatus run(String toParse, Storage storage) {
         return null;
     }
 }
