@@ -4,7 +4,7 @@ import java.util.Date;
  * This class represents a item.
  *
  * @author JD Mauthe
- * @version 5/13/18
+ * @version 5/18/18
  * @since 5/8/18
  */
 public class Item {
@@ -103,7 +103,7 @@ public class Item {
    *
    * @param amount The amount to set price.
    */
-  public void setPrice(int amount) {
+  public void setPrice(double amount) {
   }
 
   /**
