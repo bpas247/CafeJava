@@ -5,7 +5,7 @@ import java.util.Date;
  * This class represents a item.
  *
  * @author JD Mauthe
- * @version 5/25/18
+ * @version 5/28/18
  * @since 5/8/18
  */
 public class Item {
