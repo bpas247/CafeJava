@@ -1,10 +1,11 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * This class represents a item.
  *
  * @author JD Mauthe
- * @version 5/18/18
+ * @version 5/28/18
  * @since 5/8/18
  */
 public class Item {
@@ -23,7 +24,13 @@ public class Item {
    * @param stock Stock of Item.
    * @param price Price of Item.
    */
-  public Item(ItemType type, String name, int stock, double price) {
+  public Item(int itemNumber, ItemType type, String name, int stock, double price) {
+    this.type = type;
+    this.name = name;
+    this.dateAdded = new Date();
+    setItemNumber(itemNumber);
+    setStock(stock);
+    setPrice(price);
   }
 
   /**
@@ -33,7 +40,24 @@ public class Item {
    * @return Sting The value of the given attribute.
    */
   public String getAttribute(String attribute) {
-    return "";
+    attribute = attribute.toLowerCase();
+    switch (attribute) {
+      case "type":
+        return type.toString();
+      case "name":
+        return name;
+      case "date":
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        return dateFormat.format(dateAdded);
+      case "number":
+        return String.valueOf(itemNumber);
+      case "stock":
+        return String.valueOf(stock);
+      case "price":
+        return String.format("%.2f", price);
+      default:
+        return "Unknown Attribute";
+    }
   }
 
   /**
@@ -42,7 +66,7 @@ public class Item {
    * @return String Returns the name.
    */
   public String getName() {
-    return "";
+    return name;
   }
 
   /**
@@ -51,7 +75,7 @@ public class Item {
    * @return ItemType Returns the type of item.
    */
   public ItemType getType() {
-    return null;
+    return type;
   }
 
   /**
@@ -60,7 +84,7 @@ public class Item {
    * @return Date Returns the dateAdded.
    */
   public Date getDateAdded() {
-    return null;
+    return dateAdded;
   }
 
   /**
@@ -69,7 +93,20 @@ public class Item {
    * @return int Returns the itemNumber.
    */
   public int getItemNumber() {
-    return 0;
+    return itemNumber;
+  }
+
+  /**
+   * Sets the item number, if the parameter is not between 1000 and 9999, then item number is
+   * set as -1.
+   *
+   * @param itemNumber The item number to be set.
+   */
+  private void setItemNumber(int itemNumber) {
+    if (itemNumber < 1000 || itemNumber > 9999) {
+      itemNumber = -1;
+    }
+    this.itemNumber = itemNumber;
   }
 
   /**
@@ -78,7 +115,7 @@ public class Item {
    * @return int Returns the stock.
    */
   public int getStock() {
-    return 0;
+    return stock;
   }
 
   /**
@@ -87,6 +124,10 @@ public class Item {
    * @param amount The amount to set stock.
    */
   public void setStock(int amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    stock = amount;
   }
 
   /**
@@ -95,7 +136,7 @@ public class Item {
    * @return double Returns the price.
    */
   public double getPrice() {
-    return 0;
+    return price;
   }
 
   /**
@@ -104,25 +145,36 @@ public class Item {
    * @param amount The amount to set price.
    */
   public void setPrice(double amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    amount = Math.round(amount * 100.0) / 100.0; //Round amount to 2 decimal places
+    price = amount;
   }
 
   /**
-   * Overloaded toString
+   * Overridden toString
    *
    * @return String The information for the item.
    */
   @Override
   public String toString() {
-    return "";
+    return getAttribute("number") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
+        + "$" + getAttribute("price") + " " + getAttribute("date");
   }
 
   /**
-   * Overloaded hashCode
+   * Overridden hashCode
    *
    * @return int The hash code.
    */
   @Override
   public int hashCode() {
-    return 0;
+    int asciiValue = 0;
+    for (int position = 0; position < name.length(); position++) {
+      asciiValue += name.charAt(position);
+    }
+    return Integer.parseInt(String.valueOf(itemNumber) + String.valueOf(asciiValue));
   }
 }
+
