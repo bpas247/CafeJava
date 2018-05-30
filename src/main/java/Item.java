@@ -19,10 +19,11 @@ public class Item {
   /**
    * Constructor for Item.
    *
-   * @param type  Type of Item.
-   * @param name  Name of Item.
-   * @param stock Stock of Item.
-   * @param price Price of Item.
+   * @param itemNumber item identification number.
+   * @param type       Type of Item.
+   * @param name       Name of Item.
+   * @param stock      Stock of Item.
+   * @param price      Price of Item.
    */
   public Item(int itemNumber, ItemType type, String name, int stock, double price) {
     this.type = type;
@@ -31,6 +32,18 @@ public class Item {
     setItemNumber(itemNumber);
     setStock(stock);
     setPrice(price);
+  }
+
+  /**
+   * Constructor for Item.
+   *
+   * @param type  Type of Item.
+   * @param name  Name of Item.
+   * @param stock Stock of Item.
+   * @param price Price of Item.
+   */
+  public Item(ItemType type, String name, int stock, double price) {
+    this(-1, type, name, stock, price);
   }
 
   /**
