@@ -71,3 +71,21 @@ We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate re
 -   [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool
 -   [JUnit](https://junit.org/junit4/) - Test automation tool
 -   [PMD](https://pmd.github.io/) - Static Analysis Tool
+
+## Contributing
+
+Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## Contributors
+
+-   **Brady Pascoe** - _Team Manager_ - [bpas247](https://github.com/bpas247)
+-   **Justin Cheriyan** - _Software Developer_ - [justincheriyan](https://github.com/justincheriyan)
+-   **JD Mauthe** - _Software Developer_ - [jdmauthe](https://github.com/jdmauthe)
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/bpas247/CafeJava/blob/master/LICENSE) file for details
