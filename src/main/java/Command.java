@@ -6,7 +6,7 @@
  * @version 5/14/18
  * @since 5/10/18
  */
-public abstract class Command {
+public abstract class Command implements Cloneable {
   private String name; //Name of the Command
 
   /**
@@ -20,6 +20,7 @@ public abstract class Command {
 
   /**
    * Get's the name of the Command
+   *
    * @return The name of the command,
    */
   public String getName() {
@@ -43,13 +44,31 @@ public abstract class Command {
   public abstract CommandStatus parse(String toParse);
 
   /**
+   * Runs this Command on the given Storage object.
+   *
+   * @param storage The Storage object to perform on.
+   * @return Whether or not it was successful in its operation(s)
+   */
+  public abstract CommandStatus run(Storage storage);
+
+  /**
    * Runs this Command on the given object based on the given String.
    * It should validate and parse the String before performing its
    * operation(s) on the Storage.
    *
-   * @param toParse Validates and parses this String before running
+   * @param toParse The string to try and parse.
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
   public abstract CommandStatus run(String toParse, Storage storage);
+
+
+  /**
+   * Copies (or clones) the contents of the current Command instance
+   * into a new instance.
+   *
+   * @return A deep copy of this current instance.
+   */
+  @Override
+  public abstract Command clone();
 }
