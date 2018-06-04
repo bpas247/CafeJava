@@ -5,6 +5,8 @@ develop - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=dev
 
 > A java-based automated CLI inventory manager for cafe shops.
 
+Check out our website [here](https://bpas247.github.io/CafeJava/)
+
 # Table of Contents
 
 -   [Getting Started](#getting-started)
