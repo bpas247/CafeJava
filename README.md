@@ -93,7 +93,7 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 
 ## Contributing
 
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Please read [CONTRIBUTING](docs/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Contributors
 
