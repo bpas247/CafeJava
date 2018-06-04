@@ -63,10 +63,6 @@ We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate re
 
 **Note** generated reports can be found under `build/reports` after running the above command.
 
-## Deployment
-
-Currently there is no way of deploying this system, will add this as `TODO`.
-
 ## Built With
 
 -   [Gradle](https://gradle.org/) - Build automation tool
