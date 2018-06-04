@@ -78,15 +78,20 @@ public class Storage {
    * the specific item represented by that hash.
    * Null if it is not present in Storage.
    *
-   * @param name the name of the item to find
-   * @return The Item object it finds. Null if it's not present
+   * @param attribute the attribute of the item to find.
+   * @param value the value of the attribute of the item to find.
+   * @return The Item object it finds. Null if it's not present.
    */
-  public Item find(String name) {
+  public Item find(String attribute, String value) {
     Object[] itemColl = items.values().toArray();
 
     for(Object cur : itemColl) {
       Item curItem = (Item) cur;
-      if(curItem.getName().equalsIgnoreCase(name)) {
+      String returnedValue = curItem.getAttribute(attribute.toLowerCase());
+      if(returnedValue == null) {
+        return null;  //Not a valid attribute
+      }
+      if(returnedValue.equals(value)) {
         return curItem;
       }
     }

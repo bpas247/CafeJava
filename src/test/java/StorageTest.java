@@ -89,13 +89,13 @@ public class StorageTest {
       test.add(cur);
     }
 
-    Item found = test.find(toFind.getItemNumber());
+    Item found = test.find("name", toFind.getName());
 
     Assert.assertNotNull(found);
 
     Assert.assertTrue(toFind.equals(found));
 
-    Item notFound = test.find(toNotFind.getItemNumber());
+    Item notFound = test.find("name", toNotFind.getName());
 
     Assert.assertNull(notFound);
   }
