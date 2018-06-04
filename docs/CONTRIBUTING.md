@@ -7,14 +7,11 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Pull Request Process
 
-1.  Ensure any install or build dependencies are removed before the end of the layer when doing a
-    build.
-2.  Update the README.md with details of changes to the interface, this includes new environment
-    variables, exposed ports, useful file locations and container parameters.
-3.  Increase the version numbers in any examples files and the README.md to the new version that this
-    Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4.  You may merge the Pull Request to the develop branch once you have another developer sign off on it.
-5.  You may merge the Pull Request to the master branch once you have two other developers sign off on it.
+- Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+- Update the README with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
+- Increase the version numbers in any examples files and the README to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+- You may merge the Pull Request to the develop branch once you have another developer sign off on it.
+- You may merge the Pull Request to the master branch once you have two other developers sign off on it.
 
 ## Code of Conduct
 
@@ -32,28 +29,23 @@ orientation.
 Examples of behavior that contributes to creating a positive environment
 include:
 
--   Using welcoming and inclusive language
--   Being respectful of differing viewpoints and experiences
--   Gracefully accepting constructive criticism
--   Focusing on what is best for the community
--   Showing empathy towards other community members
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
 Examples of unacceptable behavior by participants include:
 
--   The use of sexualized language or imagery and unwelcome sexual attention or
-    advances
--   Trolling, insulting/derogatory comments, and personal or political attacks
--   Public or private harassment
--   Publishing others' private information, such as a physical or electronic
-    address, without explicit permission
--   Other conduct which could reasonably be considered inappropriate in a
-    professional setting
+- The use of sexualized language or imagery and unwelcome sexual attention or advances
+- Trolling, insulting/derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or electronic address, without explicit permission
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ### Our Responsibilities
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
 
 Project maintainers have the right and responsibility to remove, edit, or
 reject comments, commits, code, wiki edits, issues, and other contributions
