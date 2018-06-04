@@ -74,6 +74,26 @@ public class Storage {
   }
 
   /**
+   * Searches for a specific name and returns
+   * the specific item represented by that hash.
+   * Null if it is not present in Storage.
+   *
+   * @param name the name of the item to find
+   * @return The Item object it finds. Null if it's not present
+   */
+  public Item find(String name) {
+    Object[] itemColl = items.values().toArray();
+
+    for(Object cur : itemColl) {
+      Item curItem = (Item) cur;
+      if(curItem.getName().equalsIgnoreCase(name)) {
+        return curItem;
+      }
+    }
+    return null;
+  }
+
+  /**
    * Adds the given item into Storage.
    *
    * @param itemToAdd the Item to add into Storage
