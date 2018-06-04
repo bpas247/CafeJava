@@ -72,10 +72,6 @@ We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate re
 -   [JUnit](https://junit.org/junit4/) - Test automation tool
 -   [PMD](https://pmd.github.io/) - Static Analysis Tool
 
-## Contributing
-
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
-
 ## Contributors
 
 -   **Brady Pascoe** - _Team Manager_ - [bpas247](https://github.com/bpas247)
