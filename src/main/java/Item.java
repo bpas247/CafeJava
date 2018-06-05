@@ -8,7 +8,7 @@ import java.util.Date;
  * @version 5/28/18
  * @since 5/8/18
  */
-public class Item {
+public class Item implements Cloneable {
   private ItemType type;
   private String name;
   private Date dateAdded;
@@ -188,6 +188,17 @@ public class Item {
       asciiValue += name.charAt(position);
     }
     return Integer.parseInt(String.valueOf(itemNumber) + String.valueOf(asciiValue));
+  }
+
+  /**
+   * Copies (or clones) the contents of the current Item instance
+   * into a new instance.
+   *
+   * @return A deep copy of this current instance.
+   */
+  @Override
+  public Item clone() {
+    return new Item(itemNumber, type, name, stock, price);
   }
 }
 
