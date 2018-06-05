@@ -34,9 +34,9 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.OK, test.validate("find ff name apples"));
     Assert.assertEquals(CommandStatus.OK, test.validate("Find ff name Apples"));
 
-    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff number 1000"));
-    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff number 1005"));
-    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff Number 2000"));
+    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff id 1000"));
+    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff id 1005"));
+    Assert.assertEquals(CommandStatus.OK, test.validate("Find ff id 2000"));
 
     Assert.assertEquals(CommandStatus.BAD_LENGTH, test.validate("Find ff name apples extra"));
     Assert.assertEquals(CommandStatus.BAD_LENGTH, test.validate("Find ff"));
@@ -53,8 +53,8 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.BAD_ATTRIBUTE, test.validate("Find ff type ff"));
 
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Find ff number apple"));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Find ff number 10OO"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Find ff id apple"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Find ff id 10OO"));
 
     Assert.assertEquals(CommandStatus.NULL_PARSE, test.validate(null));
   }
@@ -66,9 +66,9 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.OK, test.parse("find ff name apples"));
     Assert.assertEquals(CommandStatus.OK, test.parse("Find ff name Apples"));
 
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff number 1000"));
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff number 1005"));
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff Number 2000"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 1000"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 1005"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 2000"));
 
     Assert.assertEquals(CommandStatus.BAD_LENGTH, test.parse("Find ff name apples extra"));
     Assert.assertEquals(CommandStatus.BAD_LENGTH, test.parse("Find ff"));
@@ -85,8 +85,8 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.BAD_ATTRIBUTE, test.parse("Find ff type ff"));
 
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Find ff number apple"));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Find ff number 10OO"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Find ff id apple"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Find ff id 10OO"));
 
 
     Assert.assertEquals(CommandStatus.NULL_PARSE, test.parse(null));
@@ -103,9 +103,9 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.OK, test.run("Find ff name apples", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff number 1005"));
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff Number 2000"));
-    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff number 1000"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 1005"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 2000"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Find ff id 1000"));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
     Assert.assertEquals(CommandStatus.BAD_LENGTH, test.run("Find ff name apples extra", storage));
@@ -127,8 +127,8 @@ public class CommandFindTest {
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Find ff number apple", storage));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Find ff number 10OO", storage));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Find ff id apple", storage));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Find ff id 10OO", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
 

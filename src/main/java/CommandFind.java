@@ -54,7 +54,7 @@ public class CommandFind extends Command {
       switch (tokens[2].toLowerCase()) {
         case "name":
           break;
-        case "number":
+        case "id":
           Integer.valueOf(tokens[3]);
           break;
         default:
