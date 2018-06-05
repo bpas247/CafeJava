@@ -110,7 +110,10 @@ public class Storage {
       return false;
     }
     if (itemToAdd.getItemNumber() == -1) { //Does it not have an item number?
-      itemToAdd = new Item(hashGen++, itemToAdd.getType(), itemToAdd.getName(), itemToAdd.getStock(), itemToAdd.getPrice());
+      while(items.containsKey(hashGen)) { //Prevents hashgen from overwriting existing numbers
+        hashGen++;
+      }
+      itemToAdd = new Item(hashGen, itemToAdd.getType(), itemToAdd.getName(), itemToAdd.getStock(), itemToAdd.getPrice());
     }
 
     items.put(itemToAdd.getItemNumber(), itemToAdd);
@@ -148,7 +151,7 @@ public class Storage {
       for(Item cur : coll) {
         out.add(cur.clone());
       }
-      
+
       return out;
     }
   }
