@@ -188,32 +188,32 @@ public class CommandParserTest {
   }
 
   @Test
-  public void runRunCommandDisplay() {
+  public void runCommandDisplay() {
     runDisplayTests(Function.RUN);
   }
 
   @Test
-  public void runRunCommandSearch() {
+  public void runCommandSearch() {
     runSearchTests(Function.RUN);
   }
 
   @Test
-  public void runRunCommandFind() {
+  public void runCommandFind() {
     runFindTests(Function.RUN);
   }
 
   @Test
-  public void runRunCommandChangeStock() {
+  public void runCommandChangeStock() {
     runChangeTests(Function.RUN);
   }
 
   @Test
-  public void runRunCommmandAdd() {
+  public void runCommandAdd() {
     runAddTests(Function.RUN);
   }
 
   @Test
-  public void runRunCommandRemove() {
+  public void runCommandRemove() {
     runRemoveTests(Function.RUN);
   }
 
