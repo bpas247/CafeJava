@@ -1,3 +1,7 @@
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * This class parses the given string to display items in the storage object.
  *
@@ -79,5 +83,30 @@ public class CommandDisplay extends Command {
   @Override
   public Command clone() {
     return new CommandDisplay(itemType, attribute, sortOrder);
+  }
+
+  /**
+   * Sorts the given ArrayList of items based on a specific attribute
+   *
+   * @param list The list to sort
+   * @param attribute the attribute to sort the Item objects by
+   */
+  private void sortItemList(List<Item> list, String attribute) {
+    if(list == null || list.size() == 0 || list.get(0).getAttribute(attribute) == null) {
+      return;
+    } else {
+      for(int i = 0; i < list.size() - 1; i++) {
+        for(int j = 0; j < list.size() - 1; j++) {
+          String curAttr = list.get(j).getAttribute(attribute);
+          String nextAttr = list.get(j+1).getAttribute(attribute);
+
+          //If the next thing is heavier than the current thing
+          if(curAttr.compareToIgnoreCase(nextAttr) < 0) {
+            //Swap the indices
+            Collections.swap(list, j, j+1);
+          }
+        }
+      }
+    }
   }
 }
