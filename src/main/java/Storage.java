@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -131,5 +132,24 @@ public class Storage {
     items.remove(itemToRemove.getItemNumber());
 
     return !items.containsKey(itemToRemove.getItemNumber());
+  }
+
+  /**
+   * Returns a deep copy of all of the items in the current hashmap
+   *
+   * @return A copy of the list of every item in Storage
+   */
+  public List<Item>getList() {
+    if(items.size() == 0) {
+      return null;
+    } else {
+      List<Item> out = new ArrayList<>(items.size());
+      Collection<Item> coll = items.values();
+      for(Item cur : coll) {
+        out.add(cur.clone());
+      }
+      
+      return out;
+    }
   }
 }
