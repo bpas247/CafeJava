@@ -37,7 +37,49 @@ public class CommandChange extends Command {
    */
   @Override
   public CommandStatus validate(String toValidate) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if (toValidate == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    String[] tokens = toValidate.split(" ");
+    if (tokens.length != 6) {
+      return CommandStatus.BAD_LENGTH;
+    }
+    if (!tokens[0].toLowerCase().equals("change")) {
+      return CommandStatus.BAD_NAME;
+    }
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        break;
+      case "ingredient":
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    try {
+      switch (tokens[2].toLowerCase()) {
+        case "name":
+          break;
+        case "id":
+          Integer.valueOf(tokens[3]);
+          break;
+        default:
+          return CommandStatus.BAD_ATTRIBUTE;
+      }
+
+      switch (tokens[4].toLowerCase()) {
+        case "stock":
+          Integer.valueOf(tokens[5]);
+          break;
+        case "price":
+          Double.valueOf(tokens[5]);
+          break;
+        default:
+          return CommandStatus.BAD_ATTRIBUTE;
+      }
+    } catch (NumberFormatException e) {
+      return CommandStatus.BAD_VALUE;
+    }
+    return CommandStatus.OK;
   }
 
   /**
@@ -48,7 +90,17 @@ public class CommandChange extends Command {
    */
   @Override
   public CommandStatus parse(String toParse) {
-    return CommandStatus.UNHANDLED_ERROR;
+    CommandStatus validateStatus = validate(toParse);
+    if (validateStatus != CommandStatus.OK) {
+      return validateStatus;
+    }
+    String[] tokens = toParse.split(" ");
+    itemType = tokens[1];
+    findAttribute = tokens[2];
+    findValue = tokens[3];
+    changeAttribute = tokens[4];
+    changeValue = tokens[5];
+    return CommandStatus.OK;
   }
 
   /**
@@ -58,7 +110,29 @@ public class CommandChange extends Command {
    * @return Whether or not it was successful in its operation(s)
    */
   public CommandStatus run(Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if (storage == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    if (findAttribute == null || findValue == null || changeAttribute == null || changeValue == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    Item findItem = storage.find(findAttribute, findValue);
+    if (findItem == null) {
+      System.out.println("Item not found");
+    } else {
+      switch (changeAttribute) {
+        case "stock":
+          findItem.setStock(findItem.getStock() + Integer.valueOf(changeValue));
+          break;
+        case "price":
+          findItem.setPrice(findItem.getPrice() + Double.valueOf(changeValue));
+          break;
+        default:
+          return CommandStatus.BAD_ATTRIBUTE;
+      }
+      System.out.println(findItem);
+    }
+    return CommandStatus.OK;
   }
 
   /**
@@ -71,7 +145,11 @@ public class CommandChange extends Command {
    * @return Whether or not it was successful in its operation(s)
    */
   public CommandStatus run(String toParse, Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
+    CommandStatus parseStatus = parse(toParse);
+    if (parseStatus != CommandStatus.OK) {
+      return parseStatus;
+    }
+    return run(storage);
   }
 
   /**

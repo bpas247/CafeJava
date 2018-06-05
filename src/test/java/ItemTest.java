@@ -52,10 +52,10 @@ public class ItemTest {
     Assert.assertEquals(dateFormat.format(date), item3.getAttribute("Date"));
     Assert.assertEquals(dateFormat.format(date), item1.getAttribute("date"));
 
-    Assert.assertEquals(String.valueOf(numbers[0]), item1.getAttribute("Number"));
-    Assert.assertEquals("-1", item2.getAttribute("Number"));
-    Assert.assertEquals("-1", item3.getAttribute("Number"));
-    Assert.assertEquals(String.valueOf(numbers[0]), item1.getAttribute("number"));
+    Assert.assertEquals(String.valueOf(numbers[0]), item1.getAttribute("id"));
+    Assert.assertEquals("-1", item2.getAttribute("id"));
+    Assert.assertEquals("-1", item3.getAttribute("id"));
+    Assert.assertEquals(String.valueOf(numbers[0]), item1.getAttribute("id"));
 
     Assert.assertEquals(String.valueOf(stocks[0]), item1.getAttribute("Stock"));
     Assert.assertEquals(String.valueOf(stocks[1]), item2.getAttribute("Stock"));
@@ -160,7 +160,7 @@ public class ItemTest {
 
     Assert.assertEquals(dateFormat.format(date), copy.getAttribute("Date"));
 
-    Assert.assertEquals(String.valueOf(numbers[0]), copy.getAttribute("Number"));
+    Assert.assertEquals(String.valueOf(numbers[0]), copy.getAttribute("id"));
 
     Assert.assertEquals(String.valueOf(stocks[0]), copy.getAttribute("Stock"));
 
