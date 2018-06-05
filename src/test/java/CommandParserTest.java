@@ -4,10 +4,12 @@ import org.junit.Test;
 
 public class CommandParserTest {
   private CommandParser test;
+  private Storage storage;
 
   @Before
   public void setUp() throws Exception {
     test = new CommandParser();
+    storage = new Storage();
   }
 
   private void runTest(String toValidate, Function method) {
@@ -17,10 +19,11 @@ public class CommandParserTest {
         Assert.assertEquals(ParserStatus.OK, test.validate(toValidate));
         break;
       case PARSE:
-        Assert.assertEquals(ParserStatus.OK, test.parse(toValidate));
+        Command returnCommand = test.parse(toValidate);
+        Assert.assertTrue(returnCommand != null);
         break;
       case RUN:
-        Assert.assertEquals(ParserStatus.OK, test.runCommand(toValidate));
+        Assert.assertEquals(ParserStatus.OK, test.runCommand(toValidate, storage));
         break;
     }
   }
@@ -124,95 +127,95 @@ public class CommandParserTest {
 
   }
 
-//  @Test
-//  public void validateDisplay() {
-//    runDisplayTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateSearch() {
-//    runSearchTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateFind() {
-//    runFindTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateChange() {
-//    runChangeTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateAdd() {
-//    runAddTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateRemove() {
-//    runRemoveTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void parseDisplay() {
-//    runDisplayTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseSearch() {
-//    runSearchTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseFind() {
-//    runFindTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseChange() {
-//    runChangeTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseAdd() {
-//    runAddTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseRemove() {
-//    runRemoveTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void runRunCommandDisplay() {
-//    runDisplayTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandSearch() {
-//    runSearchTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandFind() {
-//    runFindTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandChangeStock() {
-//    runChangeTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommmandAdd() {
-//    runAddTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandRemove() {
-//    runRemoveTests(Function.RUN);
-//  }
+  @Test
+  public void validateDisplay() {
+    runDisplayTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateSearch() {
+    runSearchTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateFind() {
+    runFindTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateChange() {
+    runChangeTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateAdd() {
+    runAddTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateRemove() {
+    runRemoveTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void parseDisplay() {
+    runDisplayTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseSearch() {
+    runSearchTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseFind() {
+    runFindTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseChange() {
+    runChangeTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseAdd() {
+    runAddTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseRemove() {
+    runRemoveTests(Function.PARSE);
+  }
+
+  @Test
+  public void runCommandDisplay() {
+    runDisplayTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandSearch() {
+    runSearchTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandFind() {
+    runFindTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandChangeStock() {
+    runChangeTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandAdd() {
+    runAddTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandRemove() {
+    runRemoveTests(Function.RUN);
+  }
 
   enum Function {
     VALIDATE,

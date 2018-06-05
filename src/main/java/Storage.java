@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -74,6 +75,31 @@ public class Storage {
   }
 
   /**
+   * Searches for a specific name and returns
+   * the specific item represented by that hash.
+   * Null if it is not present in Storage.
+   *
+   * @param attribute the attribute of the item to find.
+   * @param value the value of the attribute of the item to find.
+   * @return The Item object it finds. Null if it's not present.
+   */
+  public Item find(String attribute, String value) {
+    Object[] itemColl = items.values().toArray();
+
+    for(Object cur : itemColl) {
+      Item curItem = (Item) cur;
+      String returnedValue = curItem.getAttribute(attribute.toLowerCase());
+      if(returnedValue == null) {
+        return null;  //Not a valid attribute
+      }
+      if(returnedValue.equals(value)) {
+        return curItem;
+      }
+    }
+    return null;
+  }
+
+  /**
    * Adds the given item into Storage.
    *
    * @param itemToAdd the Item to add into Storage
@@ -84,7 +110,10 @@ public class Storage {
       return false;
     }
     if (itemToAdd.getItemNumber() == -1) { //Does it not have an item number?
-      itemToAdd = new Item(hashGen++, itemToAdd.getType(), itemToAdd.getName(), itemToAdd.getStock(), itemToAdd.getPrice());
+      while(items.containsKey(hashGen)) { //Prevents hashgen from overwriting existing numbers
+        hashGen++;
+      }
+      itemToAdd = new Item(hashGen, itemToAdd.getType(), itemToAdd.getName(), itemToAdd.getStock(), itemToAdd.getPrice());
     }
 
     items.put(itemToAdd.getItemNumber(), itemToAdd);
@@ -106,5 +135,24 @@ public class Storage {
     items.remove(itemToRemove.getItemNumber());
 
     return !items.containsKey(itemToRemove.getItemNumber());
+  }
+
+  /**
+   * Returns a deep copy of all of the items in the current hashmap
+   *
+   * @return A copy of the list of every item in Storage
+   */
+  public List<Item>getList() {
+    if(items.size() == 0) {
+      return null;
+    } else {
+      List<Item> out = new ArrayList<>(items.size());
+      Collection<Item> coll = items.values();
+      for(Item cur : coll) {
+        out.add(cur.clone());
+      }
+
+      return out;
+    }
   }
 }

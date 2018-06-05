@@ -5,10 +5,10 @@ import java.util.Date;
  * This class represents a item.
  *
  * @author JD Mauthe
- * @version 5/28/18
+ * @version 6/5/18
  * @since 5/8/18
  */
-public class Item {
+public class Item implements Cloneable {
   private ItemType type;
   private String name;
   private Date dateAdded;
@@ -32,6 +32,15 @@ public class Item {
     setItemNumber(itemNumber);
     setStock(stock);
     setPrice(price);
+  }
+
+  private Item(Item copy) {
+    type = copy.type;
+    name = copy.name;
+    dateAdded = copy.dateAdded;
+    itemNumber = copy.itemNumber;
+    stock = copy.stock;
+    price = copy.price;
   }
 
   /**
@@ -62,14 +71,14 @@ public class Item {
       case "date":
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         return dateFormat.format(dateAdded);
-      case "number":
+      case "id":
         return String.valueOf(itemNumber);
       case "stock":
         return String.valueOf(stock);
       case "price":
         return String.format("%.2f", price);
       default:
-        return "Unknown Attribute";
+        return null;
     }
   }
 
@@ -172,8 +181,8 @@ public class Item {
    */
   @Override
   public String toString() {
-    return getAttribute("number") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
-        + "$" + getAttribute("price") + " " + getAttribute("date");
+    return getAttribute("id") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
+            + "$" + getAttribute("price") + " " + getAttribute("date");
   }
 
   /**
@@ -188,6 +197,17 @@ public class Item {
       asciiValue += name.charAt(position);
     }
     return Integer.parseInt(String.valueOf(itemNumber) + String.valueOf(asciiValue));
+  }
+
+  /**
+   * Copies (or clones) the contents of the current Item instance
+   * into a new instance.
+   *
+   * @return A deep copy of this current instance.
+   */
+  @Override
+  public Item clone() {
+    return new Item(this);
   }
 }
 
