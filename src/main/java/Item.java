@@ -5,7 +5,7 @@ import java.util.Date;
  * This class represents a item.
  *
  * @author JD Mauthe
- * @version 5/28/18
+ * @version 6/5/18
  * @since 5/8/18
  */
 public class Item implements Cloneable {
@@ -32,6 +32,15 @@ public class Item implements Cloneable {
     setItemNumber(itemNumber);
     setStock(stock);
     setPrice(price);
+  }
+
+  private Item(Item copy) {
+    type = copy.type;
+    name = copy.name;
+    dateAdded = copy.dateAdded;
+    itemNumber = copy.itemNumber;
+    stock = copy.stock;
+    price = copy.price;
   }
 
   /**
@@ -69,7 +78,7 @@ public class Item implements Cloneable {
       case "price":
         return String.format("%.2f", price);
       default:
-        return "Unknown Attribute";
+        return null;
     }
   }
 
@@ -173,7 +182,7 @@ public class Item implements Cloneable {
   @Override
   public String toString() {
     return getAttribute("number") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
-        + "$" + getAttribute("price") + " " + getAttribute("date");
+            + "$" + getAttribute("price") + " " + getAttribute("date");
   }
 
   /**
@@ -198,7 +207,7 @@ public class Item implements Cloneable {
    */
   @Override
   public Item clone() {
-    return new Item(itemNumber, type, name, stock, price);
+    return new Item(this);
   }
 }
 

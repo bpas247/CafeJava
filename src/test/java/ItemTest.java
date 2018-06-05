@@ -22,13 +22,13 @@ public class ItemTest {
 
   @Before
   public void setUp() throws Exception {
-    numbers = new int[] {1000, 10000, 999};
-    types = new ItemType[] {ItemType.FROZEN_FOOD, ItemType.INGREDIENT, ItemType.FROZEN_FOOD};
-    names = new String[] {"Ice-cream", "Apple", "Nothing"};
+    numbers = new int[]{1000, 10000, 999};
+    types = new ItemType[]{ItemType.FROZEN_FOOD, ItemType.INGREDIENT, ItemType.FROZEN_FOOD};
+    names = new String[]{"Ice-cream", "Apple", "Nothing"};
     date = new Date();
     dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    stocks = new int[] {5, 5, -5};
-    prices = new double[] {5.25, 0.688, -2};
+    stocks = new int[]{5, 5, -5};
+    prices = new double[]{5.25, 0.688, -2};
 
     item1 = new Item(numbers[0], types[0], names[0], stocks[0], prices[0]);
     item2 = new Item(numbers[1], types[1], names[1], stocks[1], prices[1]);
@@ -67,7 +67,7 @@ public class ItemTest {
     Assert.assertEquals("0.00", item3.getAttribute("Price"));
     Assert.assertEquals(String.format("%.2f", roundDouble(prices[0])), item1.getAttribute("price"));
 
-    Assert.assertEquals("Unknown Attribute", item1.getAttribute("Discount"));
+    Assert.assertNull(item1.getAttribute("Discount"));
   }
 
   @Test
@@ -137,11 +137,11 @@ public class ItemTest {
   @Test
   public void toStringTest() {
     Assert.assertEquals("" + numbers[0] + " " + names[0] + " " + types[0] + " " + stocks[0] + " "
-        + "$" + String.format("%.2f", roundDouble(prices[0])) + " " + dateFormat.format(date), item1.toString());
+            + "$" + String.format("%.2f", roundDouble(prices[0])) + " " + dateFormat.format(date), item1.toString());
     Assert.assertEquals("-1 " + names[1] + " " + types[1] + " " + stocks[1] + " "
-        + "$" + String.format("%.2f", roundDouble(prices[1])) + " " + dateFormat.format(date), item2.toString());
+            + "$" + String.format("%.2f", roundDouble(prices[1])) + " " + dateFormat.format(date), item2.toString());
     Assert.assertEquals("-1 " + names[2] + " " + types[2] + " 0 "
-        + "$0.00 " + dateFormat.format(date), item3.toString());
+            + "$0.00 " + dateFormat.format(date), item3.toString());
   }
 
   @Test
@@ -149,6 +149,22 @@ public class ItemTest {
     Assert.assertEquals(1000838, item1.hashCode());
     Assert.assertEquals(-1498, item2.hashCode());
     Assert.assertEquals(-1727, item3.hashCode());
+  }
+
+  @Test
+  public void cloneTest() {
+    Item copy = item1.clone();
+    Assert.assertEquals(types[0].toString(), copy.getAttribute("Type"));
+
+    Assert.assertEquals(names[0], copy.getAttribute("Name"));
+
+    Assert.assertEquals(dateFormat.format(date), copy.getAttribute("Date"));
+
+    Assert.assertEquals(String.valueOf(numbers[0]), copy.getAttribute("Number"));
+
+    Assert.assertEquals(String.valueOf(stocks[0]), copy.getAttribute("Stock"));
+
+    Assert.assertEquals(String.format("%.2f", roundDouble(prices[0])), copy.getAttribute("Price"));
   }
 
   private double roundDouble(double amount) {
