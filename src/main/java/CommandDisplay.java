@@ -62,7 +62,7 @@ public class CommandDisplay extends Command {
         break;
       case "date":
         break;
-      case "number":
+      case "id":
         break;
       case "stock":
         break;
@@ -115,6 +115,10 @@ public class CommandDisplay extends Command {
       return CommandStatus.NULL_PARSE;
     }
     List<Item> list = storage.getList();
+    if (list == null) {
+      System.out.println("No Items");
+      return CommandStatus.OK;
+    }
     sortItemList(list, attribute);
     if (sortOrder.toLowerCase().equals("low")) {
       Collections.reverse(list);

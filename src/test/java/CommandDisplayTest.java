@@ -39,8 +39,8 @@ public class CommandDisplayTest {
     Assert.assertEquals(CommandStatus.OK, test.validate("Display ff date high"));
     Assert.assertEquals(CommandStatus.OK, test.validate("Display ff date low"));
 
-    Assert.assertEquals(CommandStatus.OK, test.validate("Display ff number high"));
-    Assert.assertEquals(CommandStatus.OK, test.validate("Display ff number low"));
+    Assert.assertEquals(CommandStatus.OK, test.validate("Display ff id high"));
+    Assert.assertEquals(CommandStatus.OK, test.validate("Display ff id low"));
 
     Assert.assertEquals(CommandStatus.OK, test.validate("Display ff stock high"));
     Assert.assertEquals(CommandStatus.OK, test.validate("Display ff stock low"));
@@ -58,8 +58,8 @@ public class CommandDisplayTest {
 
     Assert.assertEquals(CommandStatus.BAD_ATTRIBUTE, test.validate("Display ff nam high"));
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Display ff number sort"));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Display ff number Mid"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Display ff id sort"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.validate("Display ff id Mid"));
 
     Assert.assertEquals(CommandStatus.NULL_PARSE, test.validate(null));
   }
@@ -76,8 +76,8 @@ public class CommandDisplayTest {
     Assert.assertEquals(CommandStatus.OK, test.parse("Display ff date high"));
     Assert.assertEquals(CommandStatus.OK, test.parse("Display ff date low"));
 
-    Assert.assertEquals(CommandStatus.OK, test.parse("Display ff number high"));
-    Assert.assertEquals(CommandStatus.OK, test.parse("Display ff number low"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Display ff id high"));
+    Assert.assertEquals(CommandStatus.OK, test.parse("Display ff id low"));
 
     Assert.assertEquals(CommandStatus.OK, test.parse("Display ff stock high"));
     Assert.assertEquals(CommandStatus.OK, test.parse("Display ff stock low"));
@@ -95,8 +95,8 @@ public class CommandDisplayTest {
 
     Assert.assertEquals(CommandStatus.BAD_ATTRIBUTE, test.parse("Display ff nam high"));
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Display ff number sort"));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Display ff number Mid"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Display ff id sort"));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.parse("Display ff id Mid"));
 
     Assert.assertEquals(CommandStatus.NULL_PARSE, test.parse(null));
   }
@@ -116,8 +116,8 @@ public class CommandDisplayTest {
     Assert.assertEquals(CommandStatus.OK, test.run("Display ff date low", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
-    Assert.assertEquals(CommandStatus.OK, test.run("Display ff number high", storage));
-    Assert.assertEquals(CommandStatus.OK, test.run("Display ff number low", storage));
+    Assert.assertEquals(CommandStatus.OK, test.run("Display ff id high", storage));
+    Assert.assertEquals(CommandStatus.OK, test.run("Display ff id low", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
     Assert.assertEquals(CommandStatus.OK, test.run("Display ff stock high", storage));
@@ -142,8 +142,8 @@ public class CommandDisplayTest {
     Assert.assertEquals(CommandStatus.BAD_ATTRIBUTE, test.run("Display ff nam high", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Display ff number sort", storage));
-    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Display ff number Mid", storage));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Display ff id sort", storage));
+    Assert.assertEquals(CommandStatus.BAD_VALUE, test.run("Display ff id Mid", storage));
     Assert.assertEquals(CommandStatus.OK, test.run(storage));
 
     Assert.assertEquals(CommandStatus.NULL_PARSE, test.run(null, storage));
