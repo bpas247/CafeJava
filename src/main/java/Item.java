@@ -71,7 +71,7 @@ public class Item implements Cloneable {
       case "date":
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         return dateFormat.format(dateAdded);
-      case "number":
+      case "id":
         return String.valueOf(itemNumber);
       case "stock":
         return String.valueOf(stock);
@@ -181,7 +181,7 @@ public class Item implements Cloneable {
    */
   @Override
   public String toString() {
-    return getAttribute("number") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
+    return getAttribute("id") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
             + "$" + getAttribute("price") + " " + getAttribute("date");
   }
 
