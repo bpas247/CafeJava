@@ -35,7 +35,32 @@ public class CommandAdd extends Command {
    */
   @Override
   public CommandStatus validate(String toValidate) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if (toValidate == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    String[] tokens = toValidate.split(" ");
+    if (tokens.length != 8) {
+      return CommandStatus.BAD_LENGTH;
+    }
+    if (!tokens[0].toLowerCase().equals("add")) {
+      return CommandStatus.BAD_NAME;
+    }
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        break;
+      case "ingredient":
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    if(!tokens[2].equalsIgnoreCase("name")) {
+      return CommandStatus.BAD_ATTRIBUTE;
+    }
+    if(!tokens[4].equalsIgnoreCase("price")) {
+      return CommandStatus.BAD_ATTRIBUTE;
+    }
+
+    return CommandStatus.OK;
   }
 
   /**
@@ -44,8 +69,28 @@ public class CommandAdd extends Command {
    * @param toParse The given String to parse.
    * @return The Command object that was parsed. Null if it is invalid.
    */
+  @Override
   public CommandStatus parse(String toParse) {
-    return CommandStatus.UNHANDLED_ERROR;
+    CommandStatus validateStatus = validate(toParse);
+    if (validateStatus != CommandStatus.OK) {
+      return validateStatus;
+    }
+
+    String[] tokens = toParse.split(" ");
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        type = ItemType.FROZEN_FOOD;
+        break;
+      case "ingredient":
+        type = ItemType.INGREDIENT;
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    name = tokens[3];
+    price = Integer.parseInt(tokens[5]);
+    stock = Integer.parseInt(tokens[7]);
+    return CommandStatus.OK;
   }
 
   /**
@@ -54,8 +99,19 @@ public class CommandAdd extends Command {
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
+  @Override
   public CommandStatus run(Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if(storage == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    if(type == null || name == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    Item newItem = new Item(type, name, stock, price);
+    if(storage.add(newItem) != true) {
+      return CommandStatus.BAD_VALUE;
+    }
+    return CommandStatus.OK;
   }
 
   /**
