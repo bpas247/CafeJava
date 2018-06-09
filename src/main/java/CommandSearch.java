@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 
 /**
  * This class parses the given string to search items in the storage object.
@@ -9,12 +10,14 @@ import java.util.Date;
  */
 
 public class CommandSearch extends Command {
-  private ItemType type;
-  private String name;
-  private Date dateAdded;
-  private int itemNumber;
-  private int stock;
-  private int price;
+//  private ItemType type;
+//  private String name;
+//  private Date dateAdded;
+//  private int itemNumber;
+//  private int stock;
+//  private int price;
+  private String attribute;
+  private String value;
 
   /**
    * Constructor for CommandAdd
@@ -23,15 +26,17 @@ public class CommandSearch extends Command {
     super("Search");
   }
 
-  private CommandSearch(ItemType t, String n, Date d, int in, int s, int p) {
+  private CommandSearch(String a, String v/*ItemType t, String n, Date d, int in, int s, int p*/) {
     this();
+    attribute = a;
+    value = v;
 
-    type = t;
-    name = n;
-    dateAdded = d;
-    itemNumber = in;
-    stock = s;
-    price = p;
+//    type = t;
+//    name = n;
+//    dateAdded = d;
+//    itemNumber = in;
+//    stock = s;
+//    price = p;
   }
 
   /**
@@ -42,7 +47,43 @@ public class CommandSearch extends Command {
    */
   @Override
   public CommandStatus validate(String toValidate) {
-    return CommandStatus.UNHANDLED_ERROR;
+
+    if (toValidate == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    String[] tokens = toValidate.split(" ");
+    if (tokens.length != 4) {
+      return CommandStatus.BAD_LENGTH;
+    }
+    if (!tokens[0].toLowerCase().equals("search")) {
+      return CommandStatus.BAD_NAME;
+    }
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        break;
+      case "ingredient":
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    switch (tokens[2].toLowerCase()) {
+      case "type":
+        break;
+      case "name":
+        break;
+      case "date":
+        break;
+      case "id":
+        break;
+      case "stock":
+        break;
+      case "price":
+        break;
+      default:
+        return CommandStatus.BAD_ATTRIBUTE;
+    }
+
+    return CommandStatus.OK;
   }
 
   /**
@@ -53,7 +94,15 @@ public class CommandSearch extends Command {
    */
   @Override
   public CommandStatus parse(String toParse) {
-    return CommandStatus.UNHANDLED_ERROR;
+    CommandStatus validateStatus = validate(toParse);
+    if (validateStatus != CommandStatus.OK) {
+      return validateStatus;
+    }
+
+    String[] tokens = toParse.split(" ");
+    attribute = tokens[2];
+    value = tokens[3];
+    return CommandStatus.OK;
   }
 
   /**
@@ -64,7 +113,23 @@ public class CommandSearch extends Command {
    */
   @Override
   public CommandStatus run(Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if(storage == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    if(attribute == null || value == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    List<Item> returnSearch = storage.search(attribute, value);
+
+    if(returnSearch == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+
+    for(Item cur : returnSearch) {
+      System.out.println(cur);
+    }
+
+    return CommandStatus.OK;
   }
 
   /**
@@ -89,6 +154,6 @@ public class CommandSearch extends Command {
    */
   @Override
   public Command clone() {
-    return new CommandSearch(type, name, dateAdded, itemNumber, stock, price);
+    return new CommandSearch(attribute, value);
   }
 }
