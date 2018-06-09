@@ -2,50 +2,120 @@
  * This class parses the given string to find items in the storage object.
  *
  * @author JD Mauthe
- * @version 5/13/18
+ * @version 6/03/18
  * @since 5/13/18
  */
 public class CommandFind extends Command {
-    private String itemType;
-    private String attribute;
-    private String value;
+  private String itemType;
+  private String attribute;
+  private String value;
 
-    /**
-     * Constructor for CommandFind.
-     * @param n Name of command.
-     */
-    public CommandFind(String n) {
-        super(n);
-    }
+  /**
+   * Constructor for CommandFind.
+   */
+  public CommandFind() {
+    super("Find");
+  }
 
-    /**
-     * This method validates the given String.
-     * @param toValidate String to validate.
-     * @return The status of whether or not it was successfully validated.
-     */
-    @Override
-    public CommandStatus validate(String toValidate) {
-        return null;
-    }
+  private CommandFind(String it, String att, String val) {
+    this();
+    itemType = it;
+    attribute = att;
+    value = val;
+  }
 
-    /**
-     * This method parses the given string.
-     * @param toParse String to parse.
-     * @return The status of whether or not it was successfully parsed.
-     */
-    @Override
-    public CommandStatus parse(String toParse) {
-        return null;
+  /**
+   * This method validates the given String.
+   *
+   * @param toValidate String to validate.
+   * @return The status of whether or not it was successfully validated.
+   */
+  @Override
+  public CommandStatus validate(String toValidate) {
+    if (toValidate == null) {
+      return CommandStatus.NULL_PARSE;
     }
+    String[] tokens = toValidate.split(" ");
+    if (tokens.length != 4) {
+      return CommandStatus.BAD_LENGTH;
+    }
+    if (!tokens[0].toLowerCase().equals("find")) {
+      return CommandStatus.BAD_NAME;
+    }
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        break;
+      case "ingredient":
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    try {
+      switch (tokens[2].toLowerCase()) {
+        case "name":
+          break;
+        case "id":
+          Integer.valueOf(tokens[3]);
+          break;
+        default:
+          return CommandStatus.BAD_ATTRIBUTE;
+      }
+    } catch (NumberFormatException e) {
+      return CommandStatus.BAD_VALUE;
+    }
+    return CommandStatus.OK;
+  }
 
-    /**
-     * This method runs the display command.
-     * @param toParse String to parse.
-     * @param storage The storage to run command on.
-     * @return The status of whether or not it was successfully run.
-     */
-    @Override
-    public CommandStatus run(String toParse, Storage storage) {
-        return null;
+  /**
+   * This method parses the given string.
+   *
+   * @param toParse String to parse.
+   * @return The status of whether or not it was successfully parsed.
+   */
+  @Override
+  public CommandStatus parse(String toParse) {
+    CommandStatus validateStatus = validate(toParse);
+    if (validateStatus != CommandStatus.OK) {
+      return validateStatus;
     }
+    String[] tokens = toParse.split(" ");
+    itemType = tokens[1];
+    attribute = tokens[2];
+    value = tokens[3];
+    return CommandStatus.OK;
+  }
+
+  /**
+   * Runs this Command on the given Storage object.
+   *
+   * @param storage The Storage object to perform on.
+   * @return Whether or not it was successful in its operation(s)
+   */
+  @Override
+  public CommandStatus run(Storage storage) {
+    if (storage == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    if (attribute == null || value == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    Item findItem = storage.find(attribute, value);
+    if (findItem == null) {
+      System.out.println("Item not found");
+    } else {
+      System.out.println(findItem);
+    }
+    return CommandStatus.OK;
+  }
+
+  /**
+   * Copies (or clones) the contents of the current Command instance
+   * into a new instance.
+   *
+   * @return A deep copy of this current instance.
+   */
+  @Override
+  public Command clone() {
+    return new CommandFind(itemType, attribute, value);
+  }
 }

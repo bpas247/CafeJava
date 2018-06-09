@@ -2,12 +2,35 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommandParserTest {
   private CommandParser test;
+  private Storage storage;
 
   @Before
   public void setUp() throws Exception {
     test = new CommandParser();
+    storage = new Storage();
+  }
+
+  private List<Item> getTestList() {
+    List<Item> testList = new ArrayList<>();
+
+    testList.add(new Item(ItemType.FROZEN_FOOD, "ice-cream", 1234, 18.75));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "applesgreen", 215757, 19.625));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "tater tots", 17, 00));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "carrots", 239391694, 2000));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "something that's good", 2, 23));
+
+    testList.add(new Item(ItemType.INGREDIENT, "ginger", 215757, 207.9274));
+    testList.add(new Item(ItemType.INGREDIENT, "mustard", 215757, 15));
+    testList.add(new Item(ItemType.INGREDIENT, "bagel", 215757, 1));
+    testList.add(new Item(ItemType.INGREDIENT, "oregano", 215757, 205));
+    testList.add(new Item(ItemType.INGREDIENT, "strawberry", 215757, 1020));
+
+    return testList;
   }
 
   private void runTest(String toValidate, Function method) {
@@ -17,10 +40,11 @@ public class CommandParserTest {
         Assert.assertEquals(ParserStatus.OK, test.validate(toValidate));
         break;
       case PARSE:
-        Assert.assertEquals(ParserStatus.OK, test.parse(toValidate));
+        Command returnCommand = test.parse(toValidate);
+        Assert.assertTrue(returnCommand != null);
         break;
       case RUN:
-        Assert.assertEquals(ParserStatus.OK, test.runCommand(toValidate));
+        Assert.assertEquals(ParserStatus.OK, test.runCommand(toValidate, storage));
         break;
     }
   }
@@ -50,6 +74,12 @@ public class CommandParserTest {
   }
 
   private void runSearchTests(Function method) {
+    List<Item> list = getTestList();
+
+    for (Item cur : list) {
+      storage.add(cur);
+    }
+
     runTest("Search FF date 4/28/17", method);
     runTest("Search FF date 6/24/18", method);
     runTest("Search FF name bagel", method);
@@ -114,105 +144,111 @@ public class CommandParserTest {
   }
 
   private void runRemoveTests(Function method) {
+    List<Item> list = getTestList();
+
+    for (Item cur : list) {
+      storage.add(cur);
+    }
+
     runTest("Remove FF name ice-cream", method);
     runTest("Remove FF name bagel", method);
-    runTest("Remove FF id 1024", method);
+    runTest("Remove FF id 1002", method);
 
     runTest("Remove ingredient name ginger", method);
     runTest("Remove ingredient name strawberry", method);
-    runTest("Remove ingredient id 1516", method);
+    runTest("Remove ingredient id 1006", method);
 
   }
 
-//  @Test
-//  public void validateDisplay() {
-//    runDisplayTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateSearch() {
-//    runSearchTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateFind() {
-//    runFindTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateChange() {
-//    runChangeTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateAdd() {
-//    runAddTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void validateRemove() {
-//    runRemoveTests(Function.VALIDATE);
-//  }
-//
-//  @Test
-//  public void parseDisplay() {
-//    runDisplayTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseSearch() {
-//    runSearchTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseFind() {
-//    runFindTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseChange() {
-//    runChangeTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseAdd() {
-//    runAddTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void parseRemove() {
-//    runRemoveTests(Function.PARSE);
-//  }
-//
-//  @Test
-//  public void runRunCommandDisplay() {
-//    runDisplayTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandSearch() {
-//    runSearchTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandFind() {
-//    runFindTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandChangeStock() {
-//    runChangeTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommmandAdd() {
-//    runAddTests(Function.RUN);
-//  }
-//
-//  @Test
-//  public void runRunCommandRemove() {
-//    runRemoveTests(Function.RUN);
-//  }
+  @Test
+  public void validateDisplay() {
+    runDisplayTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateSearch() {
+    runSearchTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateFind() {
+    runFindTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateChange() {
+    runChangeTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateAdd() {
+    runAddTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void validateRemove() {
+    runRemoveTests(Function.VALIDATE);
+  }
+
+  @Test
+  public void parseDisplay() {
+    runDisplayTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseSearch() {
+    runSearchTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseFind() {
+    runFindTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseChange() {
+    runChangeTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseAdd() {
+    runAddTests(Function.PARSE);
+  }
+
+  @Test
+  public void parseRemove() {
+    runRemoveTests(Function.PARSE);
+  }
+
+  @Test
+  public void runCommandDisplay() {
+    runDisplayTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandSearch() {
+    runSearchTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandFind() {
+    runFindTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandChangeStock() {
+    runChangeTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandAdd() {
+    runAddTests(Function.RUN);
+  }
+
+  @Test
+  public void runCommandRemove() {
+    runRemoveTests(Function.RUN);
+  }
 
   enum Function {
     VALIDATE,
