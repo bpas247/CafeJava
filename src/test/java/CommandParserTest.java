@@ -76,7 +76,7 @@ public class CommandParserTest {
   private void runSearchTests(Function method) {
     List<Item> list = getTestList();
 
-    for(Item cur : list) {
+    for (Item cur : list) {
       storage.add(cur);
     }
 
@@ -146,7 +146,7 @@ public class CommandParserTest {
   private void runRemoveTests(Function method) {
     List<Item> list = getTestList();
 
-    for(Item cur : list) {
+    for (Item cur : list) {
       storage.add(cur);
     }
 

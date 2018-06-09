@@ -22,13 +22,13 @@ public class ItemTest {
 
   @Before
   public void setUp() throws Exception {
-    numbers = new int[]{1000, 10000, 999};
-    types = new ItemType[]{ItemType.FROZEN_FOOD, ItemType.INGREDIENT, ItemType.FROZEN_FOOD};
-    names = new String[]{"Ice-cream", "Apple", "Nothing"};
+    numbers = new int[] {1000, 10000, 999};
+    types = new ItemType[] {ItemType.FROZEN_FOOD, ItemType.INGREDIENT, ItemType.FROZEN_FOOD};
+    names = new String[] {"Ice-cream", "Apple", "Nothing"};
     date = new Date();
     dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    stocks = new int[]{5, 5, -5};
-    prices = new double[]{5.25, 0.688, -2};
+    stocks = new int[] {5, 5, -5};
+    prices = new double[] {5.25, 0.688, -2};
 
     item1 = new Item(numbers[0], types[0], names[0], stocks[0], prices[0]);
     item2 = new Item(numbers[1], types[1], names[1], stocks[1], prices[1]);
@@ -137,11 +137,11 @@ public class ItemTest {
   @Test
   public void toStringTest() {
     Assert.assertEquals("" + numbers[0] + " " + names[0] + " " + types[0] + " " + stocks[0] + " "
-            + "$" + String.format("%.2f", roundDouble(prices[0])) + " " + dateFormat.format(date), item1.toString());
+        + "$" + String.format("%.2f", roundDouble(prices[0])) + " " + dateFormat.format(date), item1.toString());
     Assert.assertEquals("-1 " + names[1] + " " + types[1] + " " + stocks[1] + " "
-            + "$" + String.format("%.2f", roundDouble(prices[1])) + " " + dateFormat.format(date), item2.toString());
+        + "$" + String.format("%.2f", roundDouble(prices[1])) + " " + dateFormat.format(date), item2.toString());
     Assert.assertEquals("-1 " + names[2] + " " + types[2] + " 0 "
-            + "$0.00 " + dateFormat.format(date), item3.toString());
+        + "$0.00 " + dateFormat.format(date), item3.toString());
   }
 
   @Test
