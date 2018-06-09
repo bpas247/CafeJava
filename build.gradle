@@ -32,6 +32,10 @@ findbugs {
     toolVersion = "3.0.1"
 }
 
+javadoc {
+    destinationDir = file('docs/javadocs')
+}
+
 pmd {
     ignoreFailures = true
 }

@@ -1,26 +1,11 @@
-master - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=master)](https://travis-ci.org/bpas247/CafeJava),
-develop - [![Build Status](https://travis-ci.org/bpas247/CafeJava.svg?branch=develop)](https://travis-ci.org/bpas247/CafeJava)
+# CafeJava
 
-# Cafe Java
+Currently under Construction.
 
-> A java-based automated CLI inventory manager for cafe shops.
+Check out our class documentation [here](javadocs)
 
-Check out our website [here](https://bpas247.github.io/CafeJava/)
+Check out our project definition [here](PROJECT-DEFINITION.md)
 
-# Table of Contents
-
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Installing](#installing)
-    -   [Additional Gradle Commands](#additional-gradle-commands)
--   [Running Tests](#running-tests)
-    -   [Running Coding Style Tests](#running-coding-style-tests)
--   [Deployment](#deployment)
--   [Built With](#built-with)
--   [Contributing](#contributing)
--   [Contributors](#contributors)
--   [Versioning](#versioning)
--   [License](#license)
 
 ## Getting Started
 
@@ -78,10 +63,6 @@ We use CheckStyle, PMD, and FindBugs to analyze and our codebase and generate re
 
 **Note** generated reports can be found under `build/reports` after running the above command.
 
-## Deployment
-
-Currently there is no way of deploying this system, will add this as `TODO`.
-
 ## Built With
 
 -   [Gradle](https://gradle.org/) - Build automation tool
@@ -90,10 +71,6 @@ Currently there is no way of deploying this system, will add this as `TODO`.
 -   [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool
 -   [JUnit](https://junit.org/junit4/) - Test automation tool
 -   [PMD](https://pmd.github.io/) - Static Analysis Tool
-
-## Contributing
-
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Contributors
 
@@ -107,4 +84,4 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/bpas247/CafeJava/blob/master/LICENSE) file for details
