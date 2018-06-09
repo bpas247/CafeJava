@@ -53,10 +53,10 @@ public class CommandAdd extends Command {
       default:
         return CommandStatus.BAD_TYPE;
     }
-    if(!tokens[2].equalsIgnoreCase("name")) {
+    if (!tokens[2].equalsIgnoreCase("name")) {
       return CommandStatus.BAD_ATTRIBUTE;
     }
-    if(!tokens[4].equalsIgnoreCase("price")) {
+    if (!tokens[4].equalsIgnoreCase("price")) {
       return CommandStatus.BAD_ATTRIBUTE;
     }
 
@@ -101,14 +101,14 @@ public class CommandAdd extends Command {
    */
   @Override
   public CommandStatus run(Storage storage) {
-    if(storage == null) {
+    if (storage == null) {
       return CommandStatus.UNHANDLED_ERROR;
     }
-    if(type == null || name == null) {
+    if (type == null || name == null) {
       return CommandStatus.NULL_PARSE;
     }
     Item newItem = new Item(type, name, stock, price);
-    if(storage.add(newItem) != true) {
+    if (storage.add(newItem) != true) {
       return CommandStatus.BAD_VALUE;
     }
     return CommandStatus.OK;

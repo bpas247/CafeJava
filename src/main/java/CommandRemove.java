@@ -90,7 +90,7 @@ public class CommandRemove extends Command {
         return CommandStatus.BAD_TYPE;
     }
 
-    switch(tokens[2].toLowerCase()) {
+    switch (tokens[2].toLowerCase()) {
       case "name":
         name = tokens[3];
         id = -1;
@@ -113,34 +113,34 @@ public class CommandRemove extends Command {
    */
   @Override
   public CommandStatus run(Storage storage) {
-    if(storage == null) {
+    if (storage == null) {
       return CommandStatus.UNHANDLED_ERROR;
     }
-    if(type == null || name == null) {
+    if (type == null || name == null) {
       return CommandStatus.NULL_PARSE;
     }
-    if(name.equals("-1") && id == -1) {
+    if (name.equals("-1") && id == -1) {
       return CommandStatus.BAD_VALUE;
     }
 
-    if(!name.equals("-1")) {
+    if (!name.equals("-1")) {
       Item foundItem = storage.find("name", name);
-      if(foundItem == null) {
+      if (foundItem == null) {
         return CommandStatus.BAD_VALUE;
       }
 
-      if(!storage.remove(foundItem)) {
+      if (!storage.remove(foundItem)) {
         return CommandStatus.UNHANDLED_ERROR;
       }
       return CommandStatus.OK;
-    } else if(id != -1) {
+    } else if (id != -1) {
       Item foundItem = storage.find(id);
 
-      if(foundItem == null) {
+      if (foundItem == null) {
         return CommandStatus.BAD_VALUE;
       }
 
-      if(!storage.remove(foundItem)) {
+      if (!storage.remove(foundItem)) {
         return CommandStatus.UNHANDLED_ERROR;
       }
     } else {

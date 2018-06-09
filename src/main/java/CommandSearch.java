@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -100,19 +99,19 @@ public class CommandSearch extends Command {
    */
   @Override
   public CommandStatus run(Storage storage) {
-    if(storage == null) {
+    if (storage == null) {
       return CommandStatus.UNHANDLED_ERROR;
     }
-    if(attribute == null || value == null) {
+    if (attribute == null || value == null) {
       return CommandStatus.NULL_PARSE;
     }
     List<Item> returnSearch = storage.search(attribute, value);
 
-    if(returnSearch == null) {
+    if (returnSearch == null) {
       return CommandStatus.UNHANDLED_ERROR;
     }
 
-    for(Item cur : returnSearch) {
+    for (Item cur : returnSearch) {
       System.out.println(cur);
     }
 
