@@ -1,4 +1,3 @@
-{% include navigation.html}
 # CafeJava
 
 > Project Definition Document
