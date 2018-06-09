@@ -2,6 +2,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommandParserTest {
   private CommandParser test;
   private Storage storage;
@@ -10,6 +13,24 @@ public class CommandParserTest {
   public void setUp() throws Exception {
     test = new CommandParser();
     storage = new Storage();
+  }
+
+  private List<Item> getTestList() {
+    List<Item> testList = new ArrayList<>();
+
+    testList.add(new Item(ItemType.FROZEN_FOOD, "ice-cream", 1234, 18.75));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "applesgreen", 215757, 19.625));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "tater tots", 17, 00));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "carrots", 239391694, 2000));
+    testList.add(new Item(ItemType.FROZEN_FOOD, "something that's good", 2, 23));
+
+    testList.add(new Item(ItemType.INGREDIENT, "ginger", 215757, 207.9274));
+    testList.add(new Item(ItemType.INGREDIENT, "mustard", 215757, 15));
+    testList.add(new Item(ItemType.INGREDIENT, "bagel", 215757, 1));
+    testList.add(new Item(ItemType.INGREDIENT, "oregano", 215757, 205));
+    testList.add(new Item(ItemType.INGREDIENT, "strawberry", 215757, 1020));
+
+    return testList;
   }
 
   private void runTest(String toValidate, Function method) {
@@ -53,6 +74,12 @@ public class CommandParserTest {
   }
 
   private void runSearchTests(Function method) {
+    List<Item> list = getTestList();
+
+    for(Item cur : list) {
+      storage.add(cur);
+    }
+
     runTest("Search FF date 4/28/17", method);
     runTest("Search FF date 6/24/18", method);
     runTest("Search FF name bagel", method);
@@ -117,13 +144,19 @@ public class CommandParserTest {
   }
 
   private void runRemoveTests(Function method) {
+    List<Item> list = getTestList();
+
+    for(Item cur : list) {
+      storage.add(cur);
+    }
+
     runTest("Remove FF name ice-cream", method);
     runTest("Remove FF name bagel", method);
-    runTest("Remove FF id 1024", method);
+    runTest("Remove FF id 1002", method);
 
     runTest("Remove ingredient name ginger", method);
     runTest("Remove ingredient name strawberry", method);
-    runTest("Remove ingredient id 1516", method);
+    runTest("Remove ingredient id 1006", method);
 
   }
 
