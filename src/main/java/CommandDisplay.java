@@ -107,6 +107,7 @@ public class CommandDisplay extends Command {
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
+  @Override
   public CommandStatus run(Storage storage) {
     if (storage == null) {
       return CommandStatus.UNHANDLED_ERROR;

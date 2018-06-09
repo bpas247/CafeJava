@@ -34,6 +34,7 @@ public class CommandRemove extends Command {
    * @param toValidate The given String to validate.
    * @return The status of whether or not it was successfully validated.
    */
+  @Override
   public CommandStatus validate(String toValidate) {
     return CommandStatus.UNHANDLED_ERROR;
   }
@@ -44,6 +45,7 @@ public class CommandRemove extends Command {
    * @param toParse The given String to parse.
    * @return The Command object that was parsed. Null if it is invalid.
    */
+  @Override
   public CommandStatus parse(String toParse) {
     return CommandStatus.UNHANDLED_ERROR;
   }
@@ -54,6 +56,7 @@ public class CommandRemove extends Command {
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
+  @Override
   public CommandStatus run(Storage storage) {
     return CommandStatus.UNHANDLED_ERROR;
   }

@@ -33,6 +33,7 @@ public class CommandAdd extends Command {
    * @param toValidate The given String to validate.
    * @return The status of whether or not it was successfully validated.
    */
+  @Override
   public CommandStatus validate(String toValidate) {
     return CommandStatus.UNHANDLED_ERROR;
   }
