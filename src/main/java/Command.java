@@ -60,7 +60,13 @@ public abstract class Command implements Cloneable {
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
-  public abstract CommandStatus run(String toParse, Storage storage);
+  public final CommandStatus run(String toParse, Storage storage) {
+    CommandStatus parseStatus = parse(toParse);
+    if (parseStatus != CommandStatus.OK) {
+      return parseStatus;
+    }
+    return run(storage);
+  }
 
 
   /**

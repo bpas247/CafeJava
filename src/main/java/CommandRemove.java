@@ -67,9 +67,10 @@ public class CommandRemove extends Command {
    * @param storage The Storage object to perform on.
    * @return Whether or not it was successful in its operation(s)
    */
-  public CommandStatus run(String toParse, Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
-  }
+//  @Override
+//  public CommandStatus run(String toParse, Storage storage) {
+//    return CommandStatus.UNHANDLED_ERROR;
+//  }
 
   /**
    * Copies (or clones) the contents of the current Command instance
