@@ -61,6 +61,57 @@ public class Storage {
 
     return out;
   }
+  /**
+   * Searches for a specified attribute with
+   * a specified value and returns
+   * the top 10 most relevant hash codes.
+   *
+   * @param attribute the attribute to search for
+   * @param value the value of the attrbute
+   * @return A list of 10 Item objects that match itemHash
+   */
+  public List<Item> search(String attribute, String value) {
+    List<Item> out;
+    int size = 10;
+
+    if (items.size() < 10) {
+      size = items.size();
+    }
+    out = new ArrayList<>(size);
+
+    Object[] itemColl = items.values().toArray();
+
+    if(((Item) itemColl[0]).getAttribute(attribute) == null) {
+      return null;
+    }
+
+    //Find the closest number based on distance
+    //To the given hash number
+    int closestIndex = 0, closestDis = Integer.MAX_VALUE;
+    for (int i = 0; i < itemColl.length; i++) {
+      Item cur = (Item) itemColl[i];
+      int curDis = cur.getAttribute(attribute).compareToIgnoreCase(value);
+      if (curDis < closestDis) {
+        closestDis = curDis;
+        closestIndex = i;
+      }
+    }
+
+    int counter = size; //Set the counter to size
+    int index = closestIndex; //Start it at closest index
+    while (counter > 0) {
+      counter--;
+      if (index >= itemColl.length) {
+        index = 0;
+      }
+
+      out.add((Item) itemColl[index]);
+
+      index++;
+    }
+
+    return out;
+  }
 
   /**
    * Searches for a specific hashcode and returns
