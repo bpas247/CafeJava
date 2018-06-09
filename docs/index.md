@@ -1,3 +1,4 @@
+{% include navigation.html}
 # CafeJava
 
 Currently under Construction.
