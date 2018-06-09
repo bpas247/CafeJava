@@ -107,7 +107,7 @@ public class CommandParser {
 
     CommandStatus stats = parseCommand.run(storage);
 
-    if(stats == CommandStatus.OK) {
+    if (stats == CommandStatus.OK) {
       return ParserStatus.OK;
     } else {
       return ParserStatus.UNHANDLED_ERROR;

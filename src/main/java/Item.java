@@ -182,7 +182,7 @@ public class Item implements Cloneable {
   @Override
   public String toString() {
     return getAttribute("id") + " " + getAttribute("name") + " " + getAttribute("type") + " " + getAttribute("stock") + " "
-            + "$" + getAttribute("price") + " " + getAttribute("date");
+        + "$" + getAttribute("price") + " " + getAttribute("date");
   }
 
   /**

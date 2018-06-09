@@ -26,9 +26,9 @@ public class UserInterface {
       System.out.println("What is your command?");
       userInput = scan.nextLine();
 
-      if(userInput.equalsIgnoreCase("0")) {
+      if (userInput.equalsIgnoreCase("0")) {
         break; //Finish the loop
-      } else if(parser.validate(userInput) != ParserStatus.OK) {
+      } else if (parser.validate(userInput) != ParserStatus.OK) {
         System.out.println("The command is not valid");
       } else {
         Command parsedCommand = parser.parse(userInput);
@@ -38,7 +38,7 @@ public class UserInterface {
         } else {
           ParserStatus runReturn = parser.runCommand(userInput, storage);
 
-          if(runReturn != ParserStatus.OK) {
+          if (runReturn != ParserStatus.OK) {
             System.out.println("The command was not successfully ran");
           } else {
             System.out.println("The command was successful");
@@ -46,6 +46,6 @@ public class UserInterface {
         }
       }
 
-    } while(!userInput.equalsIgnoreCase("0"));
+    } while (!userInput.equalsIgnoreCase("0"));
   }
 }

@@ -20,10 +20,13 @@ public enum ItemType {
    */
   @Override
   public String toString() {
-    switch(this) {
-      case FROZEN_FOOD: return "Frozen-Food";
-      case INGREDIENT: return "Ingredient";
-      default: return "Unknown";
+    switch (this) {
+      case FROZEN_FOOD:
+        return "Frozen-Food";
+      case INGREDIENT:
+        return "Ingredient";
+      default:
+        return "Unknown";
     }
   }
 }

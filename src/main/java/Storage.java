@@ -61,13 +61,14 @@ public class Storage {
 
     return out;
   }
+
   /**
    * Searches for a specified attribute with
    * a specified value and returns
    * the top 10 most relevant hash codes.
    *
    * @param attribute the attribute to search for
-   * @param value the value of the attrbute
+   * @param value     the value of the attrbute
    * @return A list of 10 Item objects that match itemHash
    */
   public List<Item> search(String attribute, String value) {
@@ -81,7 +82,7 @@ public class Storage {
 
     Object[] itemColl = items.values().toArray();
 
-    if(((Item) itemColl[0]).getAttribute(attribute) == null) {
+    if (((Item) itemColl[0]).getAttribute(attribute) == null) {
       return null;
     }
 
@@ -131,19 +132,19 @@ public class Storage {
    * Null if it is not present in Storage.
    *
    * @param attribute the attribute of the item to find.
-   * @param value the value of the attribute of the item to find.
+   * @param value     the value of the attribute of the item to find.
    * @return The Item object it finds. Null if it's not present.
    */
   public Item find(String attribute, String value) {
     Object[] itemColl = items.values().toArray();
 
-    for(Object cur : itemColl) {
+    for (Object cur : itemColl) {
       Item curItem = (Item) cur;
       String returnedValue = curItem.getAttribute(attribute.toLowerCase());
-      if(returnedValue == null) {
+      if (returnedValue == null) {
         return null;  //Not a valid attribute
       }
-      if(returnedValue.equals(value)) {
+      if (returnedValue.equals(value)) {
         return curItem;
       }
     }
@@ -161,7 +162,7 @@ public class Storage {
       return false;
     }
     if (itemToAdd.getItemNumber() == -1) { //Does it not have an item number?
-      while(items.containsKey(hashGen)) { //Prevents hashgen from overwriting existing numbers
+      while (items.containsKey(hashGen)) { //Prevents hashgen from overwriting existing numbers
         hashGen++;
       }
       itemToAdd = new Item(hashGen, itemToAdd.getType(), itemToAdd.getName(), itemToAdd.getStock(), itemToAdd.getPrice());
@@ -193,13 +194,13 @@ public class Storage {
    *
    * @return A copy of the list of every item in Storage
    */
-  public List<Item>getList() {
-    if(items.size() == 0) {
+  public List<Item> getList() {
+    if (items.size() == 0) {
       return null;
     } else {
       List<Item> out = new ArrayList<>(items.size());
       Collection<Item> coll = items.values();
-      for(Item cur : coll) {
+      for (Item cur : coll) {
         out.add(cur.clone());
       }
 
