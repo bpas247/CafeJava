@@ -9,7 +9,7 @@
 public class CommandRemove extends Command {
   private ItemType type;
   private String name;
-  private int itemNumber;
+  private int id;
   private int stock;
 
   /**
@@ -24,7 +24,7 @@ public class CommandRemove extends Command {
 
     type = t;
     name = n;
-    itemNumber = in;
+    id = in;
     stock = s;
   }
 
@@ -36,7 +36,33 @@ public class CommandRemove extends Command {
    */
   @Override
   public CommandStatus validate(String toValidate) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if (toValidate == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    String[] tokens = toValidate.split(" ");
+    if (tokens.length != 4) {
+      return CommandStatus.BAD_LENGTH;
+    }
+    if (!tokens[0].equalsIgnoreCase("remove")) {
+      return CommandStatus.BAD_NAME;
+    }
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        break;
+      case "ingredient":
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+    switch (tokens[2].toLowerCase()) {
+      case "name":
+        break;
+      case "id":
+        break;
+      default:
+        return CommandStatus.BAD_ATTRIBUTE;
+    }
+    return CommandStatus.OK;
   }
 
   /**
@@ -47,7 +73,36 @@ public class CommandRemove extends Command {
    */
   @Override
   public CommandStatus parse(String toParse) {
-    return CommandStatus.UNHANDLED_ERROR;
+    CommandStatus validateStatus = validate(toParse);
+    if (validateStatus != CommandStatus.OK) {
+      return validateStatus;
+    }
+
+    String[] tokens = toParse.split(" ");
+    switch (tokens[1].toLowerCase()) {
+      case "ff":
+        type = ItemType.FROZEN_FOOD;
+        break;
+      case "ingredient":
+        type = ItemType.INGREDIENT;
+        break;
+      default:
+        return CommandStatus.BAD_TYPE;
+    }
+
+    switch(tokens[2].toLowerCase()) {
+      case "name":
+        name = tokens[3];
+        id = -1;
+        break;
+      case "id":
+        name = "-1";
+        id = Integer.parseInt(tokens[3]);
+        break;
+      default:
+        return CommandStatus.BAD_ATTRIBUTE;
+    }
+    return CommandStatus.OK;
   }
 
   /**
@@ -58,7 +113,40 @@ public class CommandRemove extends Command {
    */
   @Override
   public CommandStatus run(Storage storage) {
-    return CommandStatus.UNHANDLED_ERROR;
+    if(storage == null) {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    if(type == null || name == null) {
+      return CommandStatus.NULL_PARSE;
+    }
+    if(name.equals("-1") && id == -1) {
+      return CommandStatus.BAD_VALUE;
+    }
+
+    if(!name.equals("-1")) {
+      Item foundItem = storage.find("name", name);
+      if(foundItem == null) {
+        return CommandStatus.BAD_VALUE;
+      }
+
+      if(!storage.remove(foundItem)) {
+        return CommandStatus.UNHANDLED_ERROR;
+      }
+      return CommandStatus.OK;
+    } else if(id != -1) {
+      Item foundItem = storage.find(id);
+
+      if(foundItem == null) {
+        return CommandStatus.BAD_VALUE;
+      }
+
+      if(!storage.remove(foundItem)) {
+        return CommandStatus.UNHANDLED_ERROR;
+      }
+    } else {
+      return CommandStatus.UNHANDLED_ERROR;
+    }
+    return CommandStatus.OK;
   }
 
   /**
@@ -83,6 +171,6 @@ public class CommandRemove extends Command {
    */
   @Override
   public Command clone() {
-    return new CommandRemove(type, name, itemNumber, stock);
+    return new CommandRemove(type, name, id, stock);
   }
 }
