@@ -136,24 +136,6 @@ public class CommandChange extends Command {
   }
 
   /**
-   * Runs this Command on the given object based on the given String.
-   * It should validate and parse the String before performing its
-   * operation(s) on the Storage.
-   *
-   * @param toParse The string to try and parse.
-   * @param storage The Storage object to perform on.
-   * @return Whether or not it was successful in its operation(s)
-   */
-//  @Override
-//  public CommandStatus run(String toParse, Storage storage) {
-//    CommandStatus parseStatus = parse(toParse);
-//    if (parseStatus != CommandStatus.OK) {
-//      return parseStatus;
-//    }
-//    return run(storage);
-//  }
-
-  /**
    * Copies (or clones) the contents of the current Command instance
    * into a new instance.
    *

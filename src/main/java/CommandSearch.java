@@ -10,12 +10,6 @@ import java.util.List;
  */
 
 public class CommandSearch extends Command {
-//  private ItemType type;
-//  private String name;
-//  private Date dateAdded;
-//  private int itemNumber;
-//  private int stock;
-//  private int price;
   private String attribute;
   private String value;
 
@@ -30,13 +24,6 @@ public class CommandSearch extends Command {
     this();
     attribute = a;
     value = v;
-
-//    type = t;
-//    name = n;
-//    dateAdded = d;
-//    itemNumber = in;
-//    stock = s;
-//    price = p;
   }
 
   /**
@@ -131,20 +118,6 @@ public class CommandSearch extends Command {
 
     return CommandStatus.OK;
   }
-
-  /**
-   * Runs this Command on the given object based on the given String.
-   * It should validate and parse the String before performing its
-   * operation(s) on the Storage.
-   *
-   * @param toParse The string to try and parse.
-   * @param storage The Storage object to perform on.
-   * @return Whether or not it was successful in its operation(s)
-   */
-//  @Override
-//  public CommandStatus run(String toParse, Storage storage) {
-//    return CommandStatus.UNHANDLED_ERROR;
-//  }
 
   /**
    * Copies (or clones) the contents of the current Command instance
